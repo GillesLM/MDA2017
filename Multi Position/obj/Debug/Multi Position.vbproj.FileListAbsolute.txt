@@ -1,0 +1,24 @@
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\obj\Debug\Multi Position.vbprojResolveAssemblyReference.cache
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\obj\Debug\Multi_Position.Resources.resources
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\obj\Debug\Multi_Position.PLotPoints.resources
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\obj\Debug\Multi Position.vbproj.GenerateResource.Cache
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\obj\Debug\Multi Position.vbproj.CoreCompileInputs.cache
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\bin\Debug\Multi Position.exe.config
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\bin\Debug\Multi Position.exe
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\bin\Debug\Multi Position.pdb
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\bin\Debug\Multi Position.xml
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\obj\Debug\Multi Position.exe
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\obj\Debug\Multi Position.xml
+C:\Users\Gilles\AppData\Local\Temporary Projects\Multi Position\obj\Debug\Multi Position.pdb
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\obj\Debug\Multi Position.vbprojResolveAssemblyReference.cache
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\obj\Debug\Multi_Position.Resources.resources
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\obj\Debug\Multi_Position.PLotPoints.resources
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\obj\Debug\Multi Position.vbproj.GenerateResource.Cache
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\obj\Debug\Multi Position.vbproj.CoreCompileInputs.cache
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\obj\Debug\Multi Position.exe
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\obj\Debug\Multi Position.xml
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\obj\Debug\Multi Position.pdb
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\bin\Debug\Multi Position.exe.config
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\bin\Debug\Multi Position.exe
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\bin\Debug\Multi Position.pdb
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\bin\Debug\Multi Position.xml

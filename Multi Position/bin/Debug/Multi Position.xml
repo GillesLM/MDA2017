@@ -1,0 +1,36 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Multi Position
+</name>
+</assembly>
+<members>
+<member name="T:Multi_Position.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Multi_Position.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Multi_Position.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Multi_Position.PositionFunctions">
+ <summary>
+ Ce module a pour but la génération de N point de coordonnées X, Y aléatoire dans une aire donnée.
+ </summary>
+</member>
+<member name="M:Multi_Position.PositionFunctions.PosGen">
+ <summary>
+ Function de génération de position aléatoire pour un point
+ </summary>
+</member>
+</members>
+</doc>
