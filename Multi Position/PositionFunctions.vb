@@ -8,6 +8,7 @@ Module PositionFunctions
     Dim y As Double 'y est la position d'un point sur l'axe des ordonnées
     Dim CoteA As Integer 'CoteA est la hauteur de l'air dans laquel sont générés les points
     Dim CoteB As Integer 'Cote B est la largeur de l'air dans laquel sont générés les poitns
+    Dim DistanceMax As Double 'Dsitance minimum entre chaque point
 
 
     'fonction qui configure le X d'un point
@@ -50,6 +51,15 @@ Module PositionFunctions
         Return CoteB
     End Function
 
+    'fonction qui configure le X d'un point
+    Private Sub SetDisMax(ByVal Dinput)
+        DistanceMax = Dinput
+    End Sub
+
+    'fonction qui recupère la valeur x d'un point
+    Public Function GetDistMax() As Double
+        Return DistanceMax
+    End Function
 
     ''' <summary>
     ''' Function de génération de position aléatoire pour un point
@@ -60,9 +70,38 @@ Module PositionFunctions
         SetY(Rnd() * CoteB)
     End Sub
 
+    ''' <summary>
+    ''' Function qui calcul le carré de l'hypothénuse à partir des valleur de X et Y
+    ''' </summary>
+    Private Function Pythagore() As Double
 
+        Dim AdjacentA As Double
+        Dim AdjacentB As Double
+        Dim Hypothenuse As Double
 
+        AdjacentA = GetX()
+        AdjacentB = GetY()
 
+        Hypothenuse = Math.Sqrt(AdjacentA ^ 2 + AdjacentB ^ 2)
+        Return Hypothenuse
+
+    End Function
+
+    ''' <summary>
+    ''' Function qui coomprez le carré de l'hypoténuse avec la distant minimum voulut entre chaque points
+    ''' </summary>
+    ''' <returns>retourne true si le carré de l'hyp. et supérieur à la distance minimum sinon retourne faux</returns>
+    Private Function Compare() As Boolean
+
+        Dim Dist As Double
+        Dist = Pythagore()
+        If Dist >= GetDistMax() Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
 
 
 End Module

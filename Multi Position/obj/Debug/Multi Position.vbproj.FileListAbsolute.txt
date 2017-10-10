@@ -22,3 +22,15 @@ F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\bin\Debug
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\bin\Debug\Multi Position.exe
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\bin\Debug\Multi Position.pdb
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\Multi Position\bin\Debug\Multi Position.xml
+E:\Boulot\VB Projet\MDA2017\Multi Position\bin\Debug\Multi Position.exe.config
+E:\Boulot\VB Projet\MDA2017\Multi Position\bin\Debug\Multi Position.exe
+E:\Boulot\VB Projet\MDA2017\Multi Position\bin\Debug\Multi Position.pdb
+E:\Boulot\VB Projet\MDA2017\Multi Position\bin\Debug\Multi Position.xml
+E:\Boulot\VB Projet\MDA2017\Multi Position\obj\Debug\Multi Position.vbprojResolveAssemblyReference.cache
+E:\Boulot\VB Projet\MDA2017\Multi Position\obj\Debug\Multi_Position.Resources.resources
+E:\Boulot\VB Projet\MDA2017\Multi Position\obj\Debug\Multi_Position.PLotPoints.resources
+E:\Boulot\VB Projet\MDA2017\Multi Position\obj\Debug\Multi Position.vbproj.GenerateResource.Cache
+E:\Boulot\VB Projet\MDA2017\Multi Position\obj\Debug\Multi Position.vbproj.CoreCompileInputs.cache
+E:\Boulot\VB Projet\MDA2017\Multi Position\obj\Debug\Multi Position.exe
+E:\Boulot\VB Projet\MDA2017\Multi Position\obj\Debug\Multi Position.xml
+E:\Boulot\VB Projet\MDA2017\Multi Position\obj\Debug\Multi Position.pdb
