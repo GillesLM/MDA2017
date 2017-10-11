@@ -75,7 +75,7 @@ Module PositionFunctions
     ''' <summary>
     ''' Function de génération des position aléatoire pour un point et les stocke dans TabPos
     ''' </summary>
-    Public Sub PosGen()
+    Public Sub PoolOfPosGenenerator()
         For i As Integer = 0 To TabPos.GetLength(1) - 1
 
             TabPos(0, i) = (Rnd() * CoteA)
@@ -109,7 +109,7 @@ Module PositionFunctions
     Private Function Compare() As Boolean
 
         Dim Dist As Double
-        Dist = Pythagore()
+        Dist = 0 'Pythagore()
         If Dist >= GetDistMax() Then
             Return True
         Else
@@ -118,6 +118,6 @@ Module PositionFunctions
 
     End Function
 
-    Public 
+
 
 End Module
