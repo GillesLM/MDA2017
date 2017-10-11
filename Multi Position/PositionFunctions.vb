@@ -3,7 +3,7 @@
 ''' </summary>
 Module PositionFunctions
 
-    Dim Tab As ArrayList 'Tableau recueillant toutes les position valide.
+    Dim TabPos(2, 20) As Double 'Tableau recueillant toutes les positions générées.
     Dim x As Double 'x est la position d'un point sur l'axe des abcisse
     Dim y As Double 'y est la position d'un point sur l'axe des ordonnées
     Dim CoteA As Integer 'CoteA est la hauteur de l'air dans laquel sont générés les points
@@ -61,26 +61,31 @@ Module PositionFunctions
         Return DistanceMax
     End Function
 
+
     ''' <summary>
-    ''' Function de génération de position aléatoire pour un point
+    ''' Function de génération des position aléatoire pour un point et les stocke dans TabPos
     ''' </summary>
     Public Sub PosGen()
+        For i As Integer = 0 To TabPos.GetLength(1) - 1
 
-        SetX(Rnd() * CoteA)
-        SetY(Rnd() * CoteB)
+            TabPos(0, i) = (Rnd() * CoteA)
+            TabPos(1, i) = (Rnd() * CoteB)
+
+        Next
     End Sub
 
     ''' <summary>
     ''' Function qui calcul le carré de l'hypothénuse à partir des valleur de X et Y
     ''' </summary>
-    Private Function Pythagore() As Double
+    Private Function Pythagore(ByVal XValidPos As Double, ByVal YValidPos As Double) As Double
 
         Dim AdjacentA As Double
         Dim AdjacentB As Double
         Dim Hypothenuse As Double
 
-        AdjacentA = GetX()
-        AdjacentB = GetY()
+        AdjacentA = GetX() - XValidPos
+        AdjacentB = GetY() - YValidPos
+
 
         Hypothenuse = Math.Sqrt(AdjacentA ^ 2 + AdjacentB ^ 2)
         Return Hypothenuse
@@ -103,5 +108,6 @@ Module PositionFunctions
 
     End Function
 
+    Public 
 
 End Module

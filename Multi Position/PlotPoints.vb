@@ -5,6 +5,7 @@ Public Class PLotPoints
 
     Private Sub GenPlots_Click(sender As Object, e As EventArgs) Handles BTNGenPlots.Click
         PosGen()
+
         Me.Chart1.Series("Series1").Points.AddXY(GetX(), GetY())
     End Sub
 
