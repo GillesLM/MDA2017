@@ -23,10 +23,9 @@ Partial Class PLotPoints
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Me.BTNGenPlots = New System.Windows.Forms.Button()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.NumCoteA = New System.Windows.Forms.NumericUpDown()
         Me.NumCoteB = New System.Windows.Forms.NumericUpDown()
@@ -38,7 +37,6 @@ Partial Class PLotPoints
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.NumDistMin = New System.Windows.Forms.NumericUpDown()
         Me.LblDistMin = New System.Windows.Forms.Label()
-        Me.BtnClear = New System.Windows.Forms.Button()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,28 +45,19 @@ Partial Class PLotPoints
         CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BTNGenPlots
-        '
-        Me.BTNGenPlots.Location = New System.Drawing.Point(221, 682)
-        Me.BTNGenPlots.Name = "BTNGenPlots"
-        Me.BTNGenPlots.Size = New System.Drawing.Size(124, 23)
-        Me.BTNGenPlots.TabIndex = 0
-        Me.BTNGenPlots.Text = "Generate Random  plots"
-        Me.BTNGenPlots.UseVisualStyleBackColor = True
-        '
         'Chart1
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea5.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea5)
+        Legend5.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend5)
         Me.Chart1.Location = New System.Drawing.Point(12, 12)
         Me.Chart1.Name = "Chart1"
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart1.Series.Add(Series2)
+        Series5.ChartArea = "ChartArea1"
+        Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
+        Series5.Legend = "Legend1"
+        Series5.Name = "Series1"
+        Me.Chart1.Series.Add(Series5)
         Me.Chart1.Size = New System.Drawing.Size(841, 570)
         Me.Chart1.TabIndex = 1
         Me.Chart1.Text = "Chart1"
@@ -76,6 +65,7 @@ Partial Class PLotPoints
         'NumCoteA
         '
         Me.NumCoteA.Location = New System.Drawing.Point(225, 615)
+        Me.NumCoteA.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumCoteA.Name = "NumCoteA"
         Me.NumCoteA.Size = New System.Drawing.Size(120, 20)
         Me.NumCoteA.TabIndex = 2
@@ -127,7 +117,7 @@ Partial Class PLotPoints
         Me.NumPosToFind.Size = New System.Drawing.Size(120, 20)
         Me.NumPosToFind.TabIndex = 4
         Me.NumPosToFind.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumPosToFind.Value = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.NumPosToFind.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
         'BtnGenPLot
         '
@@ -158,21 +148,11 @@ Partial Class PLotPoints
         Me.LblDistMin.TabIndex = 7
         Me.LblDistMin.Text = "Distance minimum entre les points"
         '
-        'BtnClear
-        '
-        Me.BtnClear.Location = New System.Drawing.Point(726, 656)
-        Me.BtnClear.Name = "BtnClear"
-        Me.BtnClear.Size = New System.Drawing.Size(75, 23)
-        Me.BtnClear.TabIndex = 8
-        Me.BtnClear.Text = "Clear"
-        Me.BtnClear.UseVisualStyleBackColor = True
-        '
         'PLotPoints
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(865, 727)
-        Me.Controls.Add(Me.BtnClear)
         Me.Controls.Add(Me.LblDistMin)
         Me.Controls.Add(Me.NumDistMin)
         Me.Controls.Add(Me.BtnGenPLot)
@@ -183,7 +163,6 @@ Partial Class PLotPoints
         Me.Controls.Add(Me.NumCoteB)
         Me.Controls.Add(Me.NumCoteA)
         Me.Controls.Add(Me.Chart1)
-        Me.Controls.Add(Me.BTNGenPlots)
         Me.Name = "PLotPoints"
         Me.Text = "Plot Point"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -196,8 +175,6 @@ Partial Class PLotPoints
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents BTNGenPlots As Button
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents NumCoteA As NumericUpDown
     Friend WithEvents NumCoteB As NumericUpDown
@@ -209,5 +186,4 @@ Partial Class PLotPoints
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents NumDistMin As NumericUpDown
     Friend WithEvents LblDistMin As Label
-    Friend WithEvents BtnClear As Button
 End Class

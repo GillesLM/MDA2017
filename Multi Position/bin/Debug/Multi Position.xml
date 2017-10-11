@@ -27,11 +27,6 @@ Multi Position
  Ce module a pour but la génération de N point de coordonnées X, Y aléatoire dans une aire donnée.
  </summary>
 </member>
-<member name="M:Multi_Position.PositionFunctions.PoolOfPosGenenerator">
- <summary>
- Function de génération des position aléatoire pour un point et les stocke dans TabPos
- </summary>
-</member>
 <member name="M:Multi_Position.PositionFunctions.XYGenerator">
  <summary>
  Function qui génère un position X Y aléatoire

@@ -6,25 +6,24 @@ Module PositionFunctions
 
     Dim NbrOfPosToFind As Integer
     Dim NbrOfPull As Integer = 100
-    Dim TabPos(2, 10000) As Double 'Tableau recueillant toutes les positions générées.
     Dim CoteA As Integer 'CoteA est la hauteur de l'air dans laquel sont générés les points
     Dim CoteB As Integer 'Cote B est la largeur de l'air dans laquel sont générés les poitns
     Dim DistanceMin As Double 'Dsitance minimum entre chaque point
     Dim RndPoint As New Point 'Point XY aléatoire
-    Dim FinalPos As New ArrayList() 'collection de point XY correspondant aux positions finals
+    Dim ResulteTables As New ArrayList() 'collection de point XY correspondant aux positions finals
 
-    Public Sub ResetFinalPos()
-        FinalPos.Clear()
+    Public Sub ResetResulteTable()
+        ResulteTables.Clear()
     End Sub
 
     'Fonction permettant de recupé un point de la tableau des résultat
-    Public Function GetFinalPos(ByVal i) As Point
-        Return FinalPos(i)
+    Public Function IndexResultTable(ByVal i) As Point
+        Return ResulteTables(i)
     End Function
 
     'Fonction qui retourne le nombre de point trouvés
-    Public Function GetFinalPosNbr() As Integer
-        Return FinalPos.Count
+    Public Function GetResultTableSize() As Integer
+        Return ResulteTables.Count
     End Function
     'fonction qui configure la largeur de la zone recevant les points
     Public Sub SetCoteA(ByVal Ainput)
@@ -56,17 +55,6 @@ Module PositionFunctions
         Return DistanceMin
     End Function
 
-
-    'fonction permettant la récupération d'un valeur du tableau
-    Public Function GetTabPos(ByVal i As Integer, ByVal j As Integer) As Double
-        Return TabPos(i, j)
-    End Function
-
-    'fonction qui return la point génér dans le pool
-    Public Function GetTabPosSize()
-        Return TabPos.GetLength(1)
-    End Function
-
     'fonction qui configure le nombre de point à trouver
     Public Sub SetNbrOfPosToFind(ByVal Posinput)
         NbrOfPosToFind = Posinput
@@ -76,18 +64,6 @@ Module PositionFunctions
     Public Function GetNbrOfPosToFind() As Double
         Return NbrOfPosToFind
     End Function
-
-    ''' <summary>
-    ''' Function de génération des position aléatoire pour un point et les stocke dans TabPos
-    ''' </summary>
-    Public Sub PoolOfPosGenenerator()
-        For i As Integer = 0 To TabPos.GetLength(1) - 1
-
-            TabPos(0, i) = (Rnd() * CoteA)
-            TabPos(1, i) = (Rnd() * CoteB)
-
-        Next
-    End Sub
 
     ''' <summary>
     ''' Function qui génère un position X Y aléatoire
@@ -123,10 +99,10 @@ Module PositionFunctions
 
         Dim Distance As Double 'Distance entre 2 point
 
-        For j As Integer = 0 To FinalPos.Count
-            Distance = Pythagore(FinalPos(j), RndPoint)
+        For j As Integer = 0 To ResulteTables.Count
+            Distance = Pythagore(ResulteTables(j), RndPoint)
             If Distance >= DistanceMin Then
-                FinalPos.Add(RndPoint)
+                ResulteTables.Add(RndPoint)
             End If
         Next
 
@@ -135,9 +111,9 @@ Module PositionFunctions
     Public Sub FindPoints()
         Dim i As Integer = 0
         XYGenerator()
-        FinalPos.Add(RndPoint)
+        ResulteTables.Add(RndPoint)
 
-        While (FinalPos.Count < NbrOfPosToFind)
+        While (ResulteTables.Count < NbrOfPosToFind)
             XYGenerator()
             CompareAll()
             i += 1
