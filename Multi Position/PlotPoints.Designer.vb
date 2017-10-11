@@ -23,9 +23,9 @@ Partial Class PLotPoints
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.NumCoteA = New System.Windows.Forms.NumericUpDown()
         Me.NumCoteB = New System.Windows.Forms.NumericUpDown()
@@ -37,27 +37,29 @@ Partial Class PLotPoints
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.NumDistMin = New System.Windows.Forms.NumericUpDown()
         Me.LblDistMin = New System.Windows.Forms.Label()
+        Me.NumResults = New System.Windows.Forms.NumericUpDown()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumPosToFind, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumResults, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Chart1
         '
-        ChartArea5.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea5)
-        Legend5.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend5)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(12, 12)
         Me.Chart1.Name = "Chart1"
-        Series5.ChartArea = "ChartArea1"
-        Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
-        Series5.Legend = "Legend1"
-        Series5.Name = "Series1"
-        Me.Chart1.Series.Add(Series5)
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(841, 570)
         Me.Chart1.TabIndex = 1
         Me.Chart1.Text = "Chart1"
@@ -148,11 +150,19 @@ Partial Class PLotPoints
         Me.LblDistMin.TabIndex = 7
         Me.LblDistMin.Text = "Distance minimum entre les points"
         '
+        'NumResults
+        '
+        Me.NumResults.Location = New System.Drawing.Point(696, 640)
+        Me.NumResults.Name = "NumResults"
+        Me.NumResults.Size = New System.Drawing.Size(120, 20)
+        Me.NumResults.TabIndex = 8
+        '
         'PLotPoints
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(865, 727)
+        Me.Controls.Add(Me.NumResults)
         Me.Controls.Add(Me.LblDistMin)
         Me.Controls.Add(Me.NumDistMin)
         Me.Controls.Add(Me.BtnGenPLot)
@@ -171,6 +181,7 @@ Partial Class PLotPoints
         CType(Me.NumPosToFind, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumResults, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -186,4 +197,5 @@ Partial Class PLotPoints
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents NumDistMin As NumericUpDown
     Friend WithEvents LblDistMin As Label
+    Friend WithEvents NumResults As NumericUpDown
 End Class

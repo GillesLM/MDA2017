@@ -22,7 +22,7 @@ Public Class PLotPoints
     Private Sub BtnGenPLot_Click(sender As Object, e As EventArgs) Handles BtnGenPLot.Click
         Me.Chart1.Series("Series1").Points.Clear()
         FindPoints()
-
+        NumResults.Value = GetResultTableSize() - 1
         For i As Integer = 0 To GetResultTableSize() - 1
             Xtemp = IndexResultTable(i).X
             Ytemp = IndexResultTable(i).Y
