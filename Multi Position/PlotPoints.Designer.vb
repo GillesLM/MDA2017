@@ -22,6 +22,7 @@ Partial Class PLotPoints
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
@@ -34,17 +35,23 @@ Partial Class PLotPoints
         Me.LblNbrOfPosToFind = New System.Windows.Forms.Label()
         Me.NumPosToFind = New System.Windows.Forms.NumericUpDown()
         Me.BtnGenPLot = New System.Windows.Forms.Button()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NumDistMin = New System.Windows.Forms.NumericUpDown()
+        Me.LblDistMin = New System.Windows.Forms.Label()
+        Me.BtnClear = New System.Windows.Forms.Button()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumPosToFind, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BTNGenPlots
         '
-        Me.BTNGenPlots.Location = New System.Drawing.Point(355, 617)
+        Me.BTNGenPlots.Location = New System.Drawing.Point(221, 682)
         Me.BTNGenPlots.Name = "BTNGenPlots"
-        Me.BTNGenPlots.Size = New System.Drawing.Size(146, 23)
+        Me.BTNGenPlots.Size = New System.Drawing.Size(124, 23)
         Me.BTNGenPlots.TabIndex = 0
         Me.BTNGenPlots.Text = "Generate Random  plots"
         Me.BTNGenPlots.UseVisualStyleBackColor = True
@@ -68,24 +75,26 @@ Partial Class PLotPoints
         '
         'NumCoteA
         '
-        Me.NumCoteA.Location = New System.Drawing.Point(103, 620)
+        Me.NumCoteA.Location = New System.Drawing.Point(225, 615)
         Me.NumCoteA.Name = "NumCoteA"
         Me.NumCoteA.Size = New System.Drawing.Size(120, 20)
         Me.NumCoteA.TabIndex = 2
+        Me.NumCoteA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.NumCoteA.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'NumCoteB
         '
-        Me.NumCoteB.Location = New System.Drawing.Point(229, 620)
+        Me.NumCoteB.Location = New System.Drawing.Point(225, 656)
         Me.NumCoteB.Name = "NumCoteB"
         Me.NumCoteB.Size = New System.Drawing.Size(120, 20)
         Me.NumCoteB.TabIndex = 2
+        Me.NumCoteB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.NumCoteB.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'LblCoteA
         '
         Me.LblCoteA.AutoSize = True
-        Me.LblCoteA.Location = New System.Drawing.Point(100, 595)
+        Me.LblCoteA.Location = New System.Drawing.Point(222, 599)
         Me.LblCoteA.Name = "LblCoteA"
         Me.LblCoteA.Size = New System.Drawing.Size(95, 13)
         Me.LblCoteA.TabIndex = 3
@@ -94,7 +103,7 @@ Partial Class PLotPoints
         'LblCoteB
         '
         Me.LblCoteB.AutoSize = True
-        Me.LblCoteB.Location = New System.Drawing.Point(226, 595)
+        Me.LblCoteB.Location = New System.Drawing.Point(222, 640)
         Me.LblCoteB.Name = "LblCoteB"
         Me.LblCoteB.Size = New System.Drawing.Size(104, 13)
         Me.LblCoteB.TabIndex = 3
@@ -103,7 +112,7 @@ Partial Class PLotPoints
         'LblNbrOfPosToFind
         '
         Me.LblNbrOfPosToFind.AutoSize = True
-        Me.LblNbrOfPosToFind.Location = New System.Drawing.Point(545, 601)
+        Me.LblNbrOfPosToFind.Location = New System.Drawing.Point(426, 599)
         Me.LblNbrOfPosToFind.Name = "LblNbrOfPosToFind"
         Me.LblNbrOfPosToFind.Size = New System.Drawing.Size(139, 13)
         Me.LblNbrOfPosToFind.TabIndex = 3
@@ -112,27 +121,60 @@ Partial Class PLotPoints
         'NumPosToFind
         '
         Me.NumPosToFind.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumPosToFind.Location = New System.Drawing.Point(548, 617)
+        Me.NumPosToFind.Location = New System.Drawing.Point(429, 615)
         Me.NumPosToFind.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumPosToFind.Name = "NumPosToFind"
         Me.NumPosToFind.Size = New System.Drawing.Size(120, 20)
         Me.NumPosToFind.TabIndex = 4
+        Me.NumPosToFind.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.NumPosToFind.Value = New Decimal(New Integer() {100, 0, 0, 0})
         '
         'BtnGenPLot
         '
-        Me.BtnGenPLot.Location = New System.Drawing.Point(674, 617)
+        Me.BtnGenPLot.Location = New System.Drawing.Point(429, 682)
         Me.BtnGenPLot.Name = "BtnGenPLot"
-        Me.BtnGenPLot.Size = New System.Drawing.Size(149, 23)
+        Me.BtnGenPLot.Size = New System.Drawing.Size(120, 23)
         Me.BtnGenPLot.TabIndex = 5
         Me.BtnGenPLot.Text = "Find Points"
         Me.BtnGenPLot.UseVisualStyleBackColor = True
+        '
+        'NumDistMin
+        '
+        Me.NumDistMin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumDistMin.Location = New System.Drawing.Point(429, 656)
+        Me.NumDistMin.Minimum = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.NumDistMin.Name = "NumDistMin"
+        Me.NumDistMin.Size = New System.Drawing.Size(120, 20)
+        Me.NumDistMin.TabIndex = 6
+        Me.NumDistMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.NumDistMin.Value = New Decimal(New Integer() {5, 0, 0, 65536})
+        '
+        'LblDistMin
+        '
+        Me.LblDistMin.AutoSize = True
+        Me.LblDistMin.Location = New System.Drawing.Point(426, 640)
+        Me.LblDistMin.Name = "LblDistMin"
+        Me.LblDistMin.Size = New System.Drawing.Size(166, 13)
+        Me.LblDistMin.TabIndex = 7
+        Me.LblDistMin.Text = "Distance minimum entre les points"
+        '
+        'BtnClear
+        '
+        Me.BtnClear.Location = New System.Drawing.Point(726, 656)
+        Me.BtnClear.Name = "BtnClear"
+        Me.BtnClear.Size = New System.Drawing.Size(75, 23)
+        Me.BtnClear.TabIndex = 8
+        Me.BtnClear.Text = "Clear"
+        Me.BtnClear.UseVisualStyleBackColor = True
         '
         'PLotPoints
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(865, 669)
+        Me.ClientSize = New System.Drawing.Size(865, 727)
+        Me.Controls.Add(Me.BtnClear)
+        Me.Controls.Add(Me.LblDistMin)
+        Me.Controls.Add(Me.NumDistMin)
         Me.Controls.Add(Me.BtnGenPLot)
         Me.Controls.Add(Me.NumPosToFind)
         Me.Controls.Add(Me.LblNbrOfPosToFind)
@@ -148,6 +190,8 @@ Partial Class PLotPoints
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumPosToFind, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -162,4 +206,8 @@ Partial Class PLotPoints
     Friend WithEvents LblNbrOfPosToFind As Label
     Friend WithEvents NumPosToFind As NumericUpDown
     Friend WithEvents BtnGenPLot As Button
+    Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents NumDistMin As NumericUpDown
+    Friend WithEvents LblDistMin As Label
+    Friend WithEvents BtnClear As Button
 End Class

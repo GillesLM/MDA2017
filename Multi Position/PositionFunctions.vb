@@ -13,7 +13,19 @@ Module PositionFunctions
     Dim RndPoint As New Point 'Point XY aléatoire
     Dim FinalPos As New ArrayList() 'collection de point XY correspondant aux positions finals
 
+    Public Sub ResetFinalPos()
+        FinalPos.Clear()
+    End Sub
 
+    'Fonction permettant de recupé un point de la tableau des résultat
+    Public Function GetFinalPos(ByVal i) As Point
+        Return FinalPos(i)
+    End Function
+
+    'Fonction qui retourne le nombre de point trouvés
+    Public Function GetFinalPosNbr() As Integer
+        Return FinalPos.Count
+    End Function
     'fonction qui configure la largeur de la zone recevant les points
     Public Sub SetCoteA(ByVal Ainput)
         CoteA = Ainput
@@ -35,12 +47,12 @@ Module PositionFunctions
     End Function
 
     'fonction qui configure le X d'un point
-    Private Sub SetDisMax(ByVal Dinput)
+    Public Sub SetDisMin(ByVal Dinput)
         DistanceMin = Dinput
     End Sub
 
     'fonction qui recupère la valeur x d'un point
-    Public Function GetDistMax() As Double
+    Public Function GetDistMin() As Double
         Return DistanceMin
     End Function
 
@@ -125,7 +137,7 @@ Module PositionFunctions
         XYGenerator()
         FinalPos.Add(RndPoint)
 
-        While i < NbrOfPull Or FinalPos.Count < NbrOfPosToFind
+        While (FinalPos.Count < NbrOfPosToFind)
             XYGenerator()
             CompareAll()
             i += 1
