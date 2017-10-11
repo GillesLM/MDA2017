@@ -22,9 +22,9 @@ Partial Class PLotPoints
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.BTNGenPlots = New System.Windows.Forms.Button()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.NumCoteA = New System.Windows.Forms.NumericUpDown()
@@ -33,6 +33,7 @@ Partial Class PLotPoints
         Me.LblCoteB = New System.Windows.Forms.Label()
         Me.LblNbrOfPosToFind = New System.Windows.Forms.Label()
         Me.NumPosToFind = New System.Windows.Forms.NumericUpDown()
+        Me.BtnGenPLot = New System.Windows.Forms.Button()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,26 +42,26 @@ Partial Class PLotPoints
         '
         'BTNGenPlots
         '
-        Me.BTNGenPlots.Location = New System.Drawing.Point(606, 617)
+        Me.BTNGenPlots.Location = New System.Drawing.Point(355, 617)
         Me.BTNGenPlots.Name = "BTNGenPlots"
-        Me.BTNGenPlots.Size = New System.Drawing.Size(206, 23)
+        Me.BTNGenPlots.Size = New System.Drawing.Size(146, 23)
         Me.BTNGenPlots.TabIndex = 0
-        Me.BTNGenPlots.Text = "Generate plots"
+        Me.BTNGenPlots.Text = "Generate Random  plots"
         Me.BTNGenPlots.UseVisualStyleBackColor = True
         '
         'Chart1
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(12, 12)
         Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Chart1.Series.Add(Series2)
         Me.Chart1.Size = New System.Drawing.Size(841, 570)
         Me.Chart1.TabIndex = 1
         Me.Chart1.Text = "Chart1"
@@ -102,7 +103,7 @@ Partial Class PLotPoints
         'LblNbrOfPosToFind
         '
         Me.LblNbrOfPosToFind.AutoSize = True
-        Me.LblNbrOfPosToFind.Location = New System.Drawing.Point(352, 595)
+        Me.LblNbrOfPosToFind.Location = New System.Drawing.Point(545, 601)
         Me.LblNbrOfPosToFind.Name = "LblNbrOfPosToFind"
         Me.LblNbrOfPosToFind.Size = New System.Drawing.Size(139, 13)
         Me.LblNbrOfPosToFind.TabIndex = 3
@@ -111,17 +112,28 @@ Partial Class PLotPoints
         'NumPosToFind
         '
         Me.NumPosToFind.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumPosToFind.Location = New System.Drawing.Point(355, 620)
+        Me.NumPosToFind.Location = New System.Drawing.Point(548, 617)
         Me.NumPosToFind.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumPosToFind.Name = "NumPosToFind"
         Me.NumPosToFind.Size = New System.Drawing.Size(120, 20)
         Me.NumPosToFind.TabIndex = 4
+        Me.NumPosToFind.Value = New Decimal(New Integer() {100, 0, 0, 0})
+        '
+        'BtnGenPLot
+        '
+        Me.BtnGenPLot.Location = New System.Drawing.Point(674, 617)
+        Me.BtnGenPLot.Name = "BtnGenPLot"
+        Me.BtnGenPLot.Size = New System.Drawing.Size(149, 23)
+        Me.BtnGenPLot.TabIndex = 5
+        Me.BtnGenPLot.Text = "Find Points"
+        Me.BtnGenPLot.UseVisualStyleBackColor = True
         '
         'PLotPoints
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(865, 669)
+        Me.Controls.Add(Me.BtnGenPLot)
         Me.Controls.Add(Me.NumPosToFind)
         Me.Controls.Add(Me.LblNbrOfPosToFind)
         Me.Controls.Add(Me.LblCoteB)
@@ -149,4 +161,5 @@ Partial Class PLotPoints
     Friend WithEvents LblCoteB As Label
     Friend WithEvents LblNbrOfPosToFind As Label
     Friend WithEvents NumPosToFind As NumericUpDown
+    Friend WithEvents BtnGenPLot As Button
 End Class

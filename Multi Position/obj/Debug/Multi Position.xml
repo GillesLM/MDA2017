@@ -32,17 +32,17 @@ Multi Position
  Function de génération des position aléatoire pour un point et les stocke dans TabPos
  </summary>
 </member>
-<member name="M:Multi_Position.PositionFunctions.XYGenenerator">
+<member name="M:Multi_Position.PositionFunctions.XYGenerator">
  <summary>
  Function qui génère un position X Y aléatoire
  </summary>
 </member>
-<member name="M:Multi_Position.PositionFunctions.Pythagore(System.Double,System.Double)">
+<member name="M:Multi_Position.PositionFunctions.Pythagore(System.Drawing.Point,System.Drawing.Point)">
  <summary>
  Function qui calcul le carré de l'hypothénuse à partir des valleur de X et Y
  </summary>
 </member>
-<member name="M:Multi_Position.PositionFunctions.Compare">
+<member name="M:Multi_Position.PositionFunctions.CompareAll">
  <summary>
  Function qui coomprez le carré de l'hypoténuse avec la distant minimum voulut entre chaque points
  </summary>

@@ -2,13 +2,17 @@
 ''' Ce module a pour but la génération de N point de coordonnées X, Y aléatoire dans une aire donnée.
 ''' </summary>
 Module PositionFunctions
+
+
     Dim NbrOfPosToFind As Integer
+    Dim NbrOfPull As Integer = 100
     Dim TabPos(2, 10000) As Double 'Tableau recueillant toutes les positions générées.
     Dim CoteA As Integer 'CoteA est la hauteur de l'air dans laquel sont générés les points
     Dim CoteB As Integer 'Cote B est la largeur de l'air dans laquel sont générés les poitns
-    Dim DistanceMax As Double 'Dsitance minimum entre chaque point
-    Dim Point As New Point 'Point XY aléatoire
+    Dim DistanceMin As Double 'Dsitance minimum entre chaque point
+    Dim RndPoint As New Point 'Point XY aléatoire
     Dim FinalPos As New ArrayList() 'collection de point XY correspondant aux positions finals
+
 
     'fonction qui configure la largeur de la zone recevant les points
     Public Sub SetCoteA(ByVal Ainput)
@@ -32,12 +36,12 @@ Module PositionFunctions
 
     'fonction qui configure le X d'un point
     Private Sub SetDisMax(ByVal Dinput)
-        DistanceMax = Dinput
+        DistanceMin = Dinput
     End Sub
 
     'fonction qui recupère la valeur x d'un point
     Public Function GetDistMax() As Double
-        Return DistanceMax
+        Return DistanceMin
     End Function
 
 
@@ -76,9 +80,9 @@ Module PositionFunctions
     ''' <summary>
     ''' Function qui génère un position X Y aléatoire
     ''' </summary>
-    Public Sub XYGenenerator()
-        Point.X = (Rnd() * CoteA)
-        Point.Y = (Rnd() * CoteB)
+    Public Sub XYGenerator()
+        RndPoint.X = (Rnd() * CoteA)
+        RndPoint.Y = (Rnd() * CoteB)
     End Sub
 
     ''' <summary>
@@ -103,17 +107,29 @@ Module PositionFunctions
     ''' Function qui coomprez le carré de l'hypoténuse avec la distant minimum voulut entre chaque points
     ''' </summary>
 
-    Private Sub CompareALL()
+    Private Sub CompareAll()
 
         Dim Distance As Double 'Distance entre 2 point
-        XYGenenerator()
-        FinalPos.Add(Point)
-        XYGenenerator()
-        Distance = Pythagore(FinalPos(0), Point)
-        If Distance >= DistanceMax Then
-            FinalPos.Add(Point)
-        End If
 
+        For j As Integer = 0 To FinalPos.Count
+            Distance = Pythagore(FinalPos(j), RndPoint)
+            If Distance >= DistanceMin Then
+                FinalPos.Add(RndPoint)
+            End If
+        Next
+
+    End Sub
+
+    Public Sub FindPoints()
+        Dim i As Integer = 0
+        XYGenerator()
+        FinalPos.Add(RndPoint)
+
+        While i < NbrOfPull Or FinalPos.Count < NbrOfPosToFind
+            XYGenerator()
+            CompareAll()
+            i += 1
+        End While
 
     End Sub
 

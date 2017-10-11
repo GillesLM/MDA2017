@@ -23,4 +23,9 @@ Public Class PLotPoints
     Private Sub NumPosToFind_ValueChanged(sender As Object, e As EventArgs) Handles NumPosToFind.ValueChanged
         SetNbrOfPosToFind(NumPosToFind.Value)
     End Sub
+
+    Private Sub BtnGenPLot_Click(sender As Object, e As EventArgs) Handles BtnGenPLot.Click
+        FindPoints()
+
+    End Sub
 End Class
