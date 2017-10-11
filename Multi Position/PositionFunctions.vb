@@ -62,6 +62,12 @@ Module PositionFunctions
     End Function
 
 
+    'fonction permettant la récupération d'un valeur du tableau
+    Public Function GetTabPos(ByVal i As Integer, ByVal j As Integer) As Double
+        Return TabPos(i, j)
+    End Function
+
+
     ''' <summary>
     ''' Function de génération des position aléatoire pour un point et les stocke dans TabPos
     ''' </summary>
