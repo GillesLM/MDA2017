@@ -67,6 +67,10 @@ Module PositionFunctions
         Return TabPos(i, j)
     End Function
 
+    'fonction qui return la point génér dans le pool
+    Public Function GetTabPosSize()
+        Return TabPos.GetLength(1)
+    End Function
 
     ''' <summary>
     ''' Function de génération des position aléatoire pour un point et les stocke dans TabPos
