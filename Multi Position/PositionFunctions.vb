@@ -7,7 +7,8 @@ Module PositionFunctions
     Dim CoteA As Integer 'CoteA est la hauteur de l'air dans laquel sont générés les points
     Dim CoteB As Integer 'Cote B est la largeur de l'air dans laquel sont générés les poitns
     Dim DistanceMax As Double 'Dsitance minimum entre chaque point
-    Dim Point As New Point
+    Dim Point As New Point 'Point XY aléatoire
+    Dim FinalPos As New ArrayList() 'collection de point XY correspondant aux positions finals
 
     'fonction qui configure la largeur de la zone recevant les points
     Public Sub SetCoteA(ByVal Ainput)
@@ -83,14 +84,14 @@ Module PositionFunctions
     ''' <summary>
     ''' Function qui calcul le carré de l'hypothénuse à partir des valleur de X et Y
     ''' </summary>
-    Private Function Pythagore(ByVal XValidPos As Double, ByVal YValidPos As Double) As Double
+    Private Function Pythagore(ByVal CurrentPos As Point, ByVal TestingPos As Point) As Double
 
         Dim AdjacentA As Double
         Dim AdjacentB As Double
         Dim Hypothenuse As Double
 
-        AdjacentA = Point.X - XValidPos
-        AdjacentB = Point.Y - YValidPos
+        AdjacentA = CurrentPos.X - TestingPos.X
+        AdjacentB = CurrentPos.Y - TestingPos.Y
 
 
         Hypothenuse = Math.Sqrt(AdjacentA ^ 2 + AdjacentB ^ 2)
@@ -102,8 +103,16 @@ Module PositionFunctions
     ''' Function qui coomprez le carré de l'hypoténuse avec la distant minimum voulut entre chaque points
     ''' </summary>
 
-    Private Sub Compare()
+    Private Sub CompareALL()
 
+        Dim Distance As Double 'Distance entre 2 point
+        XYGenenerator()
+        FinalPos.Add(Point)
+        XYGenenerator()
+        Distance = Pythagore(FinalPos(0), Point)
+        If Distance >= DistanceMax Then
+            FinalPos.Add(Point)
+        End If
 
 
     End Sub
