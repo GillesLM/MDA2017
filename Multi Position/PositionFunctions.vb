@@ -4,32 +4,10 @@
 Module PositionFunctions
     Dim NbrOfPosToFind As Integer
     Dim TabPos(2, 10000) As Double 'Tableau recueillant toutes les positions générées.
-    Dim x As Double 'x est la position d'un point sur l'axe des abcisse
-    Dim y As Double 'y est la position d'un point sur l'axe des ordonnées
     Dim CoteA As Integer 'CoteA est la hauteur de l'air dans laquel sont générés les points
     Dim CoteB As Integer 'Cote B est la largeur de l'air dans laquel sont générés les poitns
     Dim DistanceMax As Double 'Dsitance minimum entre chaque point
-
-
-    'fonction qui configure le X d'un point
-    Private Sub SetX(ByVal Xinput)
-        x = Xinput
-    End Sub
-
-    'fonction qui recupère la valeur x d'un point
-    Public Function GetX() As Double
-        Return x
-    End Function
-
-    'fonction qui configure le y d'un point
-    Private Sub SetY(ByVal Yinput)
-        y = Yinput
-    End Sub
-
-    'fonction qui recupère la valeur x d'un point
-    Public Function GetY() As Double
-        Return y
-    End Function
+    Dim Point As New Point
 
     'fonction qui configure la largeur de la zone recevant les points
     Public Sub SetCoteA(ByVal Ainput)
@@ -72,11 +50,12 @@ Module PositionFunctions
         Return TabPos.GetLength(1)
     End Function
 
+    'fonction qui configure le nombre de point à trouver
     Public Sub SetNbrOfPosToFind(ByVal Posinput)
         NbrOfPosToFind = Posinput
     End Sub
 
-    'fonction qui recupère la valeur x d'un point
+    'fonction qui recupère la valeur du nombre de point à trouver
     Public Function GetNbrOfPosToFind() As Double
         Return NbrOfPosToFind
     End Function
@@ -94,6 +73,14 @@ Module PositionFunctions
     End Sub
 
     ''' <summary>
+    ''' Function qui génère un position X Y aléatoire
+    ''' </summary>
+    Public Sub XYGenenerator()
+        Point.X = (Rnd() * CoteA)
+        Point.Y = (Rnd() * CoteB)
+    End Sub
+
+    ''' <summary>
     ''' Function qui calcul le carré de l'hypothénuse à partir des valleur de X et Y
     ''' </summary>
     Private Function Pythagore(ByVal XValidPos As Double, ByVal YValidPos As Double) As Double
@@ -102,8 +89,8 @@ Module PositionFunctions
         Dim AdjacentB As Double
         Dim Hypothenuse As Double
 
-        AdjacentA = GetX() - XValidPos
-        AdjacentB = GetY() - YValidPos
+        AdjacentA = Point.X - XValidPos
+        AdjacentB = Point.Y - YValidPos
 
 
         Hypothenuse = Math.Sqrt(AdjacentA ^ 2 + AdjacentB ^ 2)
@@ -114,7 +101,7 @@ Module PositionFunctions
     ''' <summary>
     ''' Function qui coomprez le carré de l'hypoténuse avec la distant minimum voulut entre chaque points
     ''' </summary>
-    ''' <returns>retourne true si le carré de l'hyp. et supérieur à la distance minimum sinon retourne faux</returns>
+
     Private Sub Compare()
 
 
