@@ -3,7 +3,7 @@
 ''' </summary>
 Module PositionFunctions
 
-    Dim TabPos(2, 20) As Double 'Tableau recueillant toutes les positions générées.
+    Dim TabPos(2, 10000) As Double 'Tableau recueillant toutes les positions générées.
     Dim x As Double 'x est la position d'un point sur l'axe des abcisse
     Dim y As Double 'y est la position d'un point sur l'axe des ordonnées
     Dim CoteA As Integer 'CoteA est la hauteur de l'air dans laquel sont générés les points
