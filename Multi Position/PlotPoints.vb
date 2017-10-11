@@ -5,7 +5,6 @@ Public Class PLotPoints
 
     Private Sub GenPlots_Click(sender As Object, e As EventArgs) Handles BTNGenPlots.Click
 
-
         PoolOfPosGenenerator()
         For i As Integer = 0 To GetTabPosSize() - 1
             Me.Chart1.Series("Series1").Points.AddXY(GetTabPos(0, i), GetTabPos(1, i))
@@ -17,8 +16,10 @@ Public Class PLotPoints
         SetCoteA(NumCoteA.Value)
     End Sub
 
-    Private Sub NumCoteB_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteB.ValueChanged
+    Private Sub NumCoteB_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteB.ValueChanged, NumNbrOfPosToFind.ValueChanged
         SetCoteB(NumCoteB.Value)
     End Sub
+
+
 
 End Class

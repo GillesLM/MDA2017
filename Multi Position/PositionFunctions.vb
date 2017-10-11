@@ -2,7 +2,7 @@
 ''' Ce module a pour but la génération de N point de coordonnées X, Y aléatoire dans une aire donnée.
 ''' </summary>
 Module PositionFunctions
-
+    Dim NbrOfPosToFind As Integer
     Dim TabPos(2, 10000) As Double 'Tableau recueillant toutes les positions générées.
     Dim x As Double 'x est la position d'un point sur l'axe des abcisse
     Dim y As Double 'y est la position d'un point sur l'axe des ordonnées
@@ -106,17 +106,11 @@ Module PositionFunctions
     ''' Function qui coomprez le carré de l'hypoténuse avec la distant minimum voulut entre chaque points
     ''' </summary>
     ''' <returns>retourne true si le carré de l'hyp. et supérieur à la distance minimum sinon retourne faux</returns>
-    Private Function Compare() As Boolean
+    Private Sub Compare()
 
-        Dim Dist As Double
-        Dist = 0 'Pythagore()
-        If Dist >= GetDistMax() Then
-            Return True
-        Else
-            Return False
-        End If
 
-    End Function
+
+    End Sub
 
 
 
