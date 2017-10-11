@@ -16,10 +16,11 @@ Public Class PLotPoints
         SetCoteA(NumCoteA.Value)
     End Sub
 
-    Private Sub NumCoteB_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteB.ValueChanged, NumNbrOfPosToFind.ValueChanged
+    Private Sub NumCoteB_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteB.ValueChanged
         SetCoteB(NumCoteB.Value)
     End Sub
 
-
-
+    Private Sub NumPosToFind_ValueChanged(sender As Object, e As EventArgs) Handles NumPosToFind.ValueChanged
+        SetNbrOfPosToFind(NumPosToFind.Value)
+    End Sub
 End Class

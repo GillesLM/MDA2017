@@ -72,6 +72,15 @@ Module PositionFunctions
         Return TabPos.GetLength(1)
     End Function
 
+    Public Sub SetNbrOfPosToFind(ByVal Posinput)
+        NbrOfPosToFind = Posinput
+    End Sub
+
+    'fonction qui recupère la valeur x d'un point
+    Public Function GetNbrOfPosToFind() As Double
+        Return NbrOfPosToFind
+    End Function
+
     ''' <summary>
     ''' Function de génération des position aléatoire pour un point et les stocke dans TabPos
     ''' </summary>
