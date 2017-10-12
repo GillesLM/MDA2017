@@ -73,11 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlotPoints.vb">
+    <Compile Include="DraftPlotPoints.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlotPoints.Designer.vb">
-      <DependentUpon>PlotPoints.vb</DependentUpon>
+    <Compile Include="DraftPlotPoints.Designer.vb">
+      <DependentUpon>DraftPlotPoints.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -95,7 +95,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PositionFunctions.vb" />
+    <Compile Include="DraftPositionFunctions.vb" />
+    <Compile Include="RandomPointArea.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -104,8 +105,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PLotPoints.resx">
-      <DependentUpon>PlotPoints.vb</DependentUpon>
+    <EmbeddedResource Include="DraftPlotPoints.resx">
+      <DependentUpon>DraftPlotPoints.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

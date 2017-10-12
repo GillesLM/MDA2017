@@ -2,10 +2,12 @@
 Public Class DraftPlotPoints
     Dim Xtemp As Double
     Dim Ytemp As Double
-
+    Dim Puit As New RandomPointArea()
+    Dim temp As ArrayList
 
     Private Sub NumCoteA_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteA.ValueChanged
         SetCoteA(NumCoteA.Value)
+        Puit.GenPoints()
 
     End Sub
 

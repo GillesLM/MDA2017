@@ -174,7 +174,7 @@ Public Class RandomPointArea
 
             For j As Integer = 0 To RArrey.Count - 1            'Parcours du tableau de poitn valide
 
-                Distance = Pythagore(RArrey(i), RndPoint)       'Calcul de la distance entre le point généré et le point indexé du tableau de point valide
+                Distance = Pythagore(RArrey(j), RndPoint)       'Calcul de la distance entre le point généré et le point indexé du tableau de point valide
                 If Distance < DistanceMin Then                  'Si la distance n'est pas assés grand. L'indicateur est mis à true
                     Flag = True
                 End If
