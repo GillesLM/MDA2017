@@ -6,8 +6,10 @@
     Private PointCount As Double    'Nombre de poitn dans la zone
 
 
-    Private RndPoint As Point()     'Point aléatoire   
-    Private RArrey As ArrayList()   'tableau de point contenant les points
+    Private RndPoint As New Point()     'Point aléatoire   
+    Private RArrey As New ArrayList()   'tableau de point contenant les points
+
+
 
     ''' <summary>
     ''' accès au Tableau de résultat
@@ -77,12 +79,30 @@
     End Property
 
     ''' <summary>
-    ''' Fonction qui génére un point et le stock dans RndPoint
+    ''' Fonction qui génére un point dans la zone et le stock dans RndPoint
     ''' </summary>
     Private Sub GenOnePoint()
-        RndPoint.SetValue = 
-
+        RndPoint.X = (Rnd() * Largeur)
+        RndPoint.Y = (Rnd() * Longueur)
     End Sub
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="toto"></param>
+    ''' <returns></returns>
+    Private Function Pythagore(ByVal PointA As Point, ByVal PointB As Point) As Double
+
+        Dim Hypotenuse As Double
+        Dim AdjacentA As Double
+        Dim AdjacentB As Double
+
+        AdjacentA = PointA.X - PointB.X
+        AdjacentB = PointA.Y - PointB.Y
+
+
+        Hypotenuse = Math.Sqrt(AdjacentA ^ 2 + AdjacentB ^ 2)
+        Return Hypotenuse
+    End Function
 
 
 End Class
