@@ -3,8 +3,16 @@ Public Class PLotPoints
     Dim Xtemp As Double
     Dim Ytemp As Double
 
+
+
+
+
+
+
     Private Sub NumCoteA_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteA.ValueChanged
         SetCoteA(NumCoteA.Value)
+
+
     End Sub
 
     Private Sub NumCoteB_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteB.ValueChanged
