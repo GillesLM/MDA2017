@@ -1,7 +1,7 @@
 ﻿''' <summary>
 ''' Ce module a pour but la génération de N point de coordonnées X, Y aléatoire dans une aire donnée.
 ''' </summary>
-Module PositionFunctions
+Module DraftPositionFunctions
 
 
     Dim NbrOfPosToFind As Integer

@@ -4,14 +4,8 @@ Public Class DraftPlotPoints
     Dim Ytemp As Double
 
 
-
-
-
-
-
     Private Sub NumCoteA_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteA.ValueChanged
         SetCoteA(NumCoteA.Value)
-
 
     End Sub
 
