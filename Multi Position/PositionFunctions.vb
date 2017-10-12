@@ -108,7 +108,7 @@ Module PositionFunctions
 
     End Sub
 
-    Public Sub FindPoints()
+    Public Sub Main_FindPoints()
         Dim i As Integer = 0
         XYGenerator()
         ResulteTables.Add(RndPoint)
