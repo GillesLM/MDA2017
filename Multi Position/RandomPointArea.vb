@@ -1,25 +1,27 @@
-﻿Public Class RandomPointArea
+﻿''' <summary>
+''' Class de zone de point. Elle a pour but la création d'aire contenant plusieurs point dont la position est déterminé de manière aléatoire.
+''' </summary>
+Public Class RandomPointArea
 
     Private Largeur As Double       'largeur de la zone contenant les points 
     Private Longueur As Double      'longeur de la zone contenant les points
     Private DistanceMin As Double   'distance minimum séparant les points
-    Private PointCount As Double    'Nombre de poitn dans la zone
+    Private PointCount As Double    'Nombre de point dans la zone
 
 
     Private RndPoint As New Point()     'Point aléatoire   
     Private RArrey As New ArrayList()   'tableau de point contenant les points
 
 
-
     ''' <summary>
     ''' accès au Tableau de résultat
     ''' </summary>
     ''' <returns>Retourne un tableau du type arraylist</returns>
-    Public Property ResultArray As ArrayList()
+    Public Property ResultArray As ArrayList
         Get
             Return RArrey
         End Get
-        Set(value As ArrayList())
+        Set(value As ArrayList)
             RArrey = value
         End Set
     End Property
@@ -85,10 +87,13 @@
         RndPoint.X = (Rnd() * Largeur)
         RndPoint.Y = (Rnd() * Longueur)
     End Sub
+
+
     ''' <summary>
-    ''' 
+    ''' Fonction qui calcul la distance entre 2 points.
     ''' </summary>
-    ''' <param name="toto"></param>
+    ''' <param name="PointA"> Premier point</param>
+    ''' <param name="PointB">Deuxième point</param>
     ''' <returns></returns>
     Private Function Pythagore(ByVal PointA As Point, ByVal PointB As Point) As Double
 
@@ -99,10 +104,25 @@
         AdjacentA = PointA.X - PointB.X
         AdjacentB = PointA.Y - PointB.Y
 
-
         Hypotenuse = Math.Sqrt(AdjacentA ^ 2 + AdjacentB ^ 2)
+
         Return Hypotenuse
     End Function
 
+    ''' <summary>
+    ''' Fonction de contruction de la zone avec répartition des point
+    ''' </summary>
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(ByVal CoteA As Double, ByVal CoteB As Double, ByVal Distance As Double, ByVal Count As Double)
+
+        Largeur = CoteA
+        Longueur = CoteB
+        DistanceMin = Distance
+        PointCount = Count
+
+    End Sub
 
 End Class
