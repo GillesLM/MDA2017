@@ -8,7 +8,7 @@ Public Class RandomPointArea
     Private DistanceMin As Double   'distance minimum séparant les points
     Private PointCount As Double    'Nombre de point dans la zone
 
-    Private IterationMax As UInteger = 500000
+    Private IterationMax As UInteger = 10000
     Private RndPoint As New Point()     'Point aléatoire   
     Private RArrey As New ArrayList()   'tableau de point contenant les points
 
