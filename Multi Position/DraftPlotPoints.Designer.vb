@@ -157,7 +157,7 @@ Partial Class DraftPlotPoints
         Me.NumResults.Size = New System.Drawing.Size(120, 20)
         Me.NumResults.TabIndex = 8
         '
-        'PLotPoints
+        'DraftPlotPoints
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -173,7 +173,7 @@ Partial Class DraftPlotPoints
         Me.Controls.Add(Me.NumCoteB)
         Me.Controls.Add(Me.NumCoteA)
         Me.Controls.Add(Me.Chart1)
-        Me.Name = "PLotPoints"
+        Me.Name = "DraftPlotPoints"
         Me.Text = "Plot Point"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).EndInit()

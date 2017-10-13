@@ -5,35 +5,50 @@ Public Class DraftPlotPoints
     Dim Puit As New RandomPointArea()
     Dim temp As ArrayList
 
+
+
     Private Sub NumCoteA_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteA.ValueChanged
-        SetCoteA(NumCoteA.Value)
-        Puit.GenPoints()
+
+        Puit.AreaWidth = NumCoteA.Value
 
     End Sub
 
     Private Sub NumCoteB_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteB.ValueChanged
-        SetCoteB(NumCoteB.Value)
+
+        Puit.AreaHeight = NumCoteB.Value
+
     End Sub
 
     Private Sub NumPosToFind_ValueChanged(sender As Object, e As EventArgs) Handles NumPosToFind.ValueChanged
-        SetNbrOfPosToFind(NumPosToFind.Value)
+
+        Puit.CountOfPoint = NumPosToFind.Value
+
     End Sub
 
     Private Sub NumDistMin_ValueChanged(sender As Object, e As EventArgs) Handles NumDistMin.ValueChanged
-        SetDisMin(NumDistMin.Value)
+
+        Puit.PointClearance = NumDistMin.Value
+
     End Sub
 
     Private Sub BtnGenPLot_Click(sender As Object, e As EventArgs) Handles BtnGenPLot.Click
-        Me.Chart1.Series("Series1").Points.Clear()
-        Main_FindPoints()
-        NumResults.Value = GetResultTableSize() - 1
-        For i As Integer = 0 To GetResultTableSize() - 1
-            Xtemp = IndexResultTable(i).X
-            Ytemp = IndexResultTable(i).Y
-            Me.Chart1.Series("Series1").Points.AddXY(Xtemp, Ytemp)
+
+        Puit.GenPoints()
+        Dim PointTemp As Point
+
+        For i As Integer = 0 To Puit.PointPositionArray.Count() - 1
+            PointTemp = Puit.PointPositionArray(i)
+
+
+
+            Me.Chart1.Series("Series1").Points.AddXY(PointTemp.X, PointTemp.Y)
         Next
-        ResetResulteTable()
+
+        Puit.PointPositionArray.Clear()
 
     End Sub
 
+    Private Sub DraftPlotPoints_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Puit.PointClearance = 10000
+    End Sub
 End Class
