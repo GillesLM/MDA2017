@@ -47,7 +47,7 @@ Multi Position
  Class de zone de point. Elle a pour but la création d'aire contenant plusieurs point dont la position est déterminé de manière aléatoire.
  </summary>
 </member>
-<member name="P:Multi_Position.RandomPointArea.PointPositionArray">
+<member name="P:Multi_Position.RandomPointArea.PointsArray">
  <summary>
  Tableau des point peuplant la zone
  </summary>

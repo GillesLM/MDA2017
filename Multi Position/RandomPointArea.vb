@@ -8,7 +8,7 @@ Public Class RandomPointArea
     Private DistanceMin As Double   'distance minimum séparant les points
     Private PointCount As Double    'Nombre de point dans la zone
 
-    Private IterationMax As UInteger = 10000
+    Private IterationMax As UInteger = 500000
     Private RndPoint As New Point()     'Point aléatoire   
     Private RArrey As New ArrayList()   'tableau de point contenant les points
 
@@ -17,7 +17,7 @@ Public Class RandomPointArea
     ''' Tableau des point peuplant la zone
     ''' </summary>
     ''' <returns>Retourne un tableau du type arraylist</returns>
-    Public Property PointPositionArray As ArrayList
+    Public Property PointsArray As ArrayList
         Get
             Return RArrey
         End Get
@@ -168,7 +168,7 @@ Public Class RandomPointArea
         RArrey.Add(RndPoint)
 
         'Recherche d'un nombre de point aléatoire. S'arrête si il a a assés de point trouvé ou si la boucle a fait assés d'itération
-        While Count < PointCount Or Iteration < IterationMax
+        While (Count < PointCount - 1) And (Iteration < IterationMax)
             RndPoint = GenOnePoint()                            'génération d'un point
             Flag = False                                        'indicateur de point trouvé mis à false
 
