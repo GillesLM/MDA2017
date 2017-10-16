@@ -1,27 +1,27 @@
 ﻿''' <summary>
 ''' Class de zone de point. Elle a pour but la création d'aire contenant plusieurs point dont la position est déterminé de manière aléatoire.
 ''' </summary>
-Public Class RandomPointArea
+Public Class Well
 
     Private Largeur As Double       'largeur de la zone contenant les points 
     Private Longueur As Double      'longeur de la zone contenant les points
     Private DistanceMin As Double   'distance minimum séparant les points
-    Private PointCount As Double    'Nombre de point dans la zone
+    Private NumberOfPoint As Double    'Nombre de point dans la zone
 
-    Private IterationMax As UInteger = 10000
+    Private IterationMax As UInteger = 10000 'Nombre d'iération pour trouver les points
     Private RndPoint As New Point()     'Point aléatoire   
-    Private RArrey As New ArrayList()   'tableau de point contenant les points
+    Private RArrey As New List(Of Point)   'tableau de point contenant les points
 
 
     ''' <summary>
     ''' Tableau des point peuplant la zone
     ''' </summary>
     ''' <returns>Retourne un tableau du type arraylist</returns>
-    Public Property PointsArray As ArrayList
+    Public Property PointsArray As List(Of Point)
         Get
             Return RArrey
         End Get
-        Set(value As ArrayList)
+        Set(value As List(Of Point))
             RArrey = value
         End Set
     End Property
@@ -58,7 +58,7 @@ Public Class RandomPointArea
     ''' Distance minimum entre chaque point
     ''' </summary>
     ''' <returns>Retourne une valeur de type double</returns>
-    Public Property PointClearance As Double
+    Public Property Clearance As Double
         Get
             Return DistanceMin
         End Get
@@ -71,12 +71,12 @@ Public Class RandomPointArea
     ''' nombre de point a trouver
     ''' </summary>
     ''' <returns>retourne une valeur du type double</returns>
-    Public Property CountOfPoint As Double
+    Public Property PCount As Double
         Get
-            Return PointCount
+            Return NumberOfPoint
         End Get
         Set(value As Double)
-            PointCount = value
+            NumberOfPoint = value
         End Set
     End Property
 
@@ -133,7 +133,7 @@ Public Class RandomPointArea
         Largeur = 10
         Longueur = 10
         DistanceMin = 1
-        PointCount = 1
+        NumberOfPoint = 1
 
     End Sub
 
@@ -141,7 +141,7 @@ Public Class RandomPointArea
     ''' Construction de la zone avec les attributs données
     ''' </summary>
     ''' <param name="CoteA">largeur de la zone</param>
-    ''' <param name="CoteB">Longueu de la zone</param>
+    ''' <param name="CoteB">Longueur de la zone</param>
     ''' <param name="Distance">Distance minimal entre les points</param>
     ''' <param name="Count">Nombre de point contenu dans la zone</param>
     Public Sub New(ByVal CoteA As Double, ByVal CoteB As Double, ByVal Distance As Double, ByVal Count As Double)
@@ -149,7 +149,7 @@ Public Class RandomPointArea
         Largeur = CoteA
         Longueur = CoteB
         DistanceMin = Distance
-        PointCount = Count
+        NumberOfPoint = Count
 
     End Sub
 
@@ -167,12 +167,12 @@ Public Class RandomPointArea
         RndPoint = GenOnePoint()
         RArrey.Add(RndPoint)
 
-        'Recherche d'un nombre de point aléatoire. S'arrête si il a a assés de point trouvé ou si la boucle a fait assés d'itération
-        While (Count < PointCount - 1) And (Iteration < IterationMax)
+        'Recherche d'un nombre de point aléatoire. S'arrête si il a a assés de points trouvés ou si la boucle a fait assés d'itération
+        While (Count < NumberOfPoint - 1) And (Iteration < IterationMax)
             RndPoint = GenOnePoint()                            'génération d'un point
             Flag = False                                        'indicateur de point trouvé mis à false
 
-            For j As Integer = 0 To RArrey.Count - 1            'Parcours du tableau de poitn valide
+            For j As Integer = 0 To RArrey.Count - 1            'Parcours du tableau de points valides
 
                 Distance = Pythagore(RArrey(j), RndPoint)       'Calcul de la distance entre le point généré et le point indexé du tableau de point valide
                 If Distance < DistanceMin Then                  'Si la distance n'est pas assés grand. L'indicateur est mis à true
@@ -190,6 +190,15 @@ Public Class RandomPointArea
         End While
 
 
+    End Sub
+
+    ''' <summary>
+    ''' Fonction qui trie les points selon les X croissants.
+    ''' </summary>
+    Public Sub SortPoint()
+        Dim sortedPoints As New List(Of Point)
+        sortedPoints = (From pnt In RArrey Order By pnt.X, pnt.Y Select pnt).ToList
+        RArrey = sortedPoints
     End Sub
 
 End Class
