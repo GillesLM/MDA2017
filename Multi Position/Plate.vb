@@ -160,5 +160,15 @@ Public Class Plate
 
     End Sub
 
+    ''' <summary>
+    ''' Génération de "WellNbr" puits dans une plaque.
+    ''' </summary>
+    ''' <param name="BaseWell">Puit sur lequel se base la generation</param>
+    ''' <param name="WellNbr">Nombre de puit a générer</param>
+    Public Sub GenWells(ByVal BaseWell As Well, ByVal WellNbr As Integer)
+
+
+
+    End Sub
 
 End Class
