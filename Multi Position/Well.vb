@@ -1,5 +1,7 @@
 ﻿''' <summary>
 ''' Class de zone de point. Elle a pour but la création d'aire contenant plusieurs point dont la position est déterminé de manière aléatoire.
+''' Cette classe nécessite le module algèbre, qui contient les fonction de génératino d'un point aléatoire et le calcul de la distance entre 2 points
+''' 
 ''' </summary>
 Public Class Well
 
@@ -17,7 +19,7 @@ Public Class Well
     ''' Tableau des point peuplant la zone
     ''' </summary>
     ''' <returns>Retourne un tableau du type arraylist</returns>
-    Public Property PointsArray As List(Of Point)
+    Public Property _PointsArray As List(Of Point)
         Get
             Return RArrey
         End Get
@@ -30,7 +32,7 @@ Public Class Well
     ''' largeur de la zone
     ''' </summary>
     ''' <returns>Retourne une valeur du type double</returns>
-    Public Property AreaWidth As Double
+    Public Property _AreaWidth As Double
         Get
             Return Largeur
         End Get
@@ -44,7 +46,7 @@ Public Class Well
     ''' longueur de la zone
     ''' </summary>
     ''' <returns>Retourne une valeur du type double</returns>
-    Public Property AreaHeight As Double
+    Public Property _AreaHeight As Double
         Get
             Return Longueur
         End Get
@@ -58,7 +60,7 @@ Public Class Well
     ''' Distance minimum entre chaque point
     ''' </summary>
     ''' <returns>Retourne une valeur de type double</returns>
-    Public Property Clearance As Double
+    Public Property _Clearance As Double
         Get
             Return DistanceMin
         End Get
@@ -71,7 +73,7 @@ Public Class Well
     ''' nombre de point a trouver
     ''' </summary>
     ''' <returns>retourne une valeur du type double</returns>
-    Public Property PCount As Double
+    Public Property _CountAsk As Double
         Get
             Return NumberOfPoint
         End Get
@@ -84,7 +86,7 @@ Public Class Well
     ''' Maximum d'iteration pour trouver les points aléatoire
     ''' </summary>
     ''' <returns>le nombre maximum d'itération pour trouver les points aléatoire</returns>
-    Public Property MaxIteration As UInteger
+    Public Property _MaxIteration As UInteger
         Get
             Return IterationMax
         End Get
@@ -93,38 +95,7 @@ Public Class Well
         End Set
     End Property
 
-    ''' <summary>
-    ''' Génération d'un point aléatoire
-    ''' </summary>
-    Private Function GenOnePoint() As Point
-        Dim Point As Point
 
-        Point.X = (Rnd() * Largeur)
-        Point.Y = (Rnd() * Longueur)
-
-        Return Point
-    End Function
-
-
-    ''' <summary>
-    ''' Calcul de la distance entre 2 points.
-    ''' </summary>
-    ''' <param name="PointA"> Premier point</param>
-    ''' <param name="PointB">Deuxième point</param>
-    ''' <returns></returns>
-    Private Function Pythagore(ByVal PointA As Point, ByVal PointB As Point) As Double
-
-        Dim Hypotenuse As Double
-        Dim AdjacentA As Double
-        Dim AdjacentB As Double
-
-        AdjacentA = PointA.X - PointB.X
-        AdjacentB = PointA.Y - PointB.Y
-
-        Hypotenuse = Math.Sqrt(AdjacentA ^ 2 + AdjacentB ^ 2)
-
-        Return Hypotenuse
-    End Function
 
     ''' <summary>
     ''' Contruction de la zone avec les paramètre par défaut : largeur 10, Longueur 10, Distance mini 1, nombre de point 1
@@ -164,12 +135,12 @@ Public Class Well
         Dim Distance As Integer = 0     ' distance calculé entre 2 point
 
         'Génération du premier point que l'on ajout au tableau de point aléatoire
-        RndPoint = GenOnePoint()
+        RndPoint = GenOnePoint(Largeur, Longueur)
         RArrey.Add(RndPoint)
 
         'Recherche d'un nombre de point aléatoire. S'arrête si il a a assés de points trouvés ou si la boucle a fait assés d'itération
         While (Count < NumberOfPoint - 1) And (Iteration < IterationMax)
-            RndPoint = GenOnePoint()                            'génération d'un point
+            RndPoint = GenOnePoint(Largeur, Longueur)                            'génération d'un point
             Flag = False                                        'indicateur de point trouvé mis à false
 
             For j As Integer = 0 To RArrey.Count - 1            'Parcours du tableau de points valides
@@ -189,16 +160,19 @@ Public Class Well
             Iteration += 1                                      'le compteur d'itération est incrémenté
         End While
 
+        SortPoint(RArrey)
 
     End Sub
 
     ''' <summary>
     ''' Fonction qui trie les points selon les X croissants.
     ''' </summary>
-    Public Sub SortPoint()
+    Private Sub SortPoint(ByRef List As List(Of Point))
+
         Dim sortedPoints As New List(Of Point)
-        sortedPoints = (From pnt In RArrey Order By pnt.X, pnt.Y Select pnt).ToList
-        RArrey = sortedPoints
+        sortedPoints = (From pnt In List Order By pnt.X, pnt.Y Select pnt).ToList
+        List = sortedPoints
+
     End Sub
 
 End Class

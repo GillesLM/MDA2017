@@ -8,10 +8,13 @@ Public Class DraftPlotPoints
     Dim Interation As Integer = 0
 
     Private Sub DraftPlotPoints_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Puit.AreaWidth = NumCoteA.Value
-        Puit.AreaHeight = NumCoteB.Value
-        Puit.PCount = NumPosToFind.Value
-        Puit.Clearance = NumDistMin.Value
+        Puit._AreaWidth = NumCoteA.Value
+        Puit._AreaHeight = NumCoteB.Value
+        Puit._CountAsk = NumPosToFind.Value
+        Puit._Clearance = NumDistMin.Value
+
+        Puit.
+
 
 
     End Sub
@@ -20,32 +23,32 @@ Public Class DraftPlotPoints
 
     Private Sub NumCoteA_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteA.ValueChanged
 
-        Puit.AreaWidth = NumCoteA.Value
+        Puit._AreaWidth = NumCoteA.Value
 
     End Sub
 
     Private Sub NumCoteB_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteB.ValueChanged
 
-        Puit.AreaHeight = NumCoteB.Value
+        Puit._AreaHeight = NumCoteB.Value
 
     End Sub
 
     Private Sub NumPosToFind_ValueChanged(sender As Object, e As EventArgs) Handles NumPosToFind.ValueChanged
 
-        Puit.PCount = NumPosToFind.Value
+        Puit._CountAsk = NumPosToFind.Value
 
     End Sub
 
     Private Sub NumDistMin_ValueChanged(sender As Object, e As EventArgs) Handles NumDistMin.ValueChanged
 
-        Puit.Clearance = NumDistMin.Value
+        Puit._Clearance = NumDistMin.Value
 
     End Sub
 
     Private Sub BtnGenPLot_Click(sender As Object, e As EventArgs) Handles BtnGenPLot.Click
 
         Puit.GenPoints()
-        Puit.SortPoint()
+        Puit.
         Timer1.Enabled = True
 
     End Sub
@@ -55,7 +58,7 @@ Public Class DraftPlotPoints
     Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
 
         Me.Chart1.Series("Series1").Points.Clear()
-        Puit.PointsArray.Clear()
+        Puit._PointsArray.Clear()
 
     End Sub
 
@@ -63,9 +66,9 @@ Public Class DraftPlotPoints
 
         Dim PointTemp As Point
 
-        If Interation < Puit.PointsArray.Count Then
+        If Interation < Puit._PointsArray.Count Then
 
-            PointTemp = Puit.PointsArray(Interation)
+            PointTemp = Puit._PointsArray(Interation)
             Me.Chart1.Series("Series1").Points.AddXY(PointTemp.X, PointTemp.Y)
             Interation += 1
 
