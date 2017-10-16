@@ -23,11 +23,14 @@
     ''' <summary>
     ''' Génération d'un point aléatoire
     ''' </summary>
-    Public Function GenOnePoint(ByVal AbsyceScale As Double, ByVal OrdonneScale As Double) As Point
+    ''' <param name="AbscissScale">2chelle des abscisse</param>
+    ''' <param name="OrdonateScale"></param>
+    ''' <returns>A point</returns>
+    Public Function GenOnePoint(ByVal AbscissScale As Double, ByVal OrdonateScale As Double) As Point
         Dim Point As Point
 
-        Point.X = (Rnd() * AbsyceScale)
-        Point.Y = (Rnd() * OrdonneScale)
+        Point.X = (Rnd() * AbscissScale)
+        Point.Y = (Rnd() * OrdonateScale)
 
         Return Point
     End Function

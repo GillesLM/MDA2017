@@ -1,5 +1,6 @@
 ﻿
 Public Class DraftPlotPoints
+
     Dim Xtemp As Double
     Dim Ytemp As Double
     Dim Puit As New Well()
@@ -7,14 +8,16 @@ Public Class DraftPlotPoints
     Dim Wait As Boolean = True
     Dim Interation As Integer = 0
 
+    Dim plaque As New Plate()
+
     Private Sub DraftPlotPoints_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Puit._AreaWidth = NumCoteA.Value
         Puit._AreaHeight = NumCoteB.Value
         Puit._CountAsk = NumPosToFind.Value
         Puit._Clearance = NumDistMin.Value
 
-        Puit.
-
+        plaque.AddWell(Puit)
 
 
     End Sub
@@ -48,7 +51,7 @@ Public Class DraftPlotPoints
     Private Sub BtnGenPLot_Click(sender As Object, e As EventArgs) Handles BtnGenPLot.Click
 
         Puit.GenPoints()
-        Puit.
+
         Timer1.Enabled = True
 
     End Sub

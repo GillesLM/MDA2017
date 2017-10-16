@@ -5,6 +5,8 @@
 ''' </summary>
 Public Class Well
 
+    Private ID As String           'Numéro d'identification du puits
+    Private Coordonates As Point    'Coordonnées du puit sur une plaque
     Private Largeur As Double       'largeur de la zone contenant les points 
     Private Longueur As Double      'longeur de la zone contenant les points
     Private DistanceMin As Double   'distance minimum séparant les points
@@ -95,7 +97,31 @@ Public Class Well
         End Set
     End Property
 
+    ''' <summary>
+    ''' Numéro d'identification du puit
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property _ID As String
+        Get
+            Return ID
+        End Get
+        Set(value As String)
+            ID = value
+        End Set
+    End Property
 
+    ''' <summary>
+    ''' Coordonnées XY du point sur une plaque.
+    ''' </summary>
+    ''' <returns>Donnée du type point</returns>
+    Public Property _Coordonates As Point
+        Get
+            Return Coordonates
+        End Get
+        Set(value As Point)
+            Coordonates = value
+        End Set
+    End Property
 
     ''' <summary>
     ''' Contruction de la zone avec les paramètre par défaut : largeur 10, Longueur 10, Distance mini 1, nombre de point 1
