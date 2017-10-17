@@ -33,19 +33,25 @@ Partial Class DraftPlotPoints
         Me.LblCoteB = New System.Windows.Forms.Label()
         Me.LblNbrOfPosToFind = New System.Windows.Forms.Label()
         Me.NumPosToFind = New System.Windows.Forms.NumericUpDown()
-        Me.BtnGenPLot = New System.Windows.Forms.Button()
+        Me.BtnGenPlot = New System.Windows.Forms.Button()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.NumDistMin = New System.Windows.Forms.NumericUpDown()
         Me.LblDistMin = New System.Windows.Forms.Label()
         Me.BtnClear = New System.Windows.Forms.Button()
         Me.Lbliteration = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerPoints = New System.Windows.Forms.Timer(Me.components)
+        Me.NumWells = New System.Windows.Forms.NumericUpDown()
+        Me.LblWells = New System.Windows.Forms.Label()
+        Me.BtnGenWells = New System.Windows.Forms.Button()
+        Me.TimerWells = New System.Windows.Forms.Timer(Me.components)
+        Me.LblIDwell = New System.Windows.Forms.Label()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumPosToFind, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumWells, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Chart1
@@ -67,7 +73,7 @@ Partial Class DraftPlotPoints
         '
         'NumCoteA
         '
-        Me.NumCoteA.Location = New System.Drawing.Point(225, 615)
+        Me.NumCoteA.Location = New System.Drawing.Point(28, 615)
         Me.NumCoteA.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumCoteA.Name = "NumCoteA"
         Me.NumCoteA.Size = New System.Drawing.Size(120, 20)
@@ -77,7 +83,7 @@ Partial Class DraftPlotPoints
         '
         'NumCoteB
         '
-        Me.NumCoteB.Location = New System.Drawing.Point(225, 656)
+        Me.NumCoteB.Location = New System.Drawing.Point(28, 656)
         Me.NumCoteB.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumCoteB.Name = "NumCoteB"
         Me.NumCoteB.Size = New System.Drawing.Size(120, 20)
@@ -88,7 +94,7 @@ Partial Class DraftPlotPoints
         'LblCoteA
         '
         Me.LblCoteA.AutoSize = True
-        Me.LblCoteA.Location = New System.Drawing.Point(222, 599)
+        Me.LblCoteA.Location = New System.Drawing.Point(25, 599)
         Me.LblCoteA.Name = "LblCoteA"
         Me.LblCoteA.Size = New System.Drawing.Size(95, 13)
         Me.LblCoteA.TabIndex = 3
@@ -97,7 +103,7 @@ Partial Class DraftPlotPoints
         'LblCoteB
         '
         Me.LblCoteB.AutoSize = True
-        Me.LblCoteB.Location = New System.Drawing.Point(222, 640)
+        Me.LblCoteB.Location = New System.Drawing.Point(25, 640)
         Me.LblCoteB.Name = "LblCoteB"
         Me.LblCoteB.Size = New System.Drawing.Size(104, 13)
         Me.LblCoteB.TabIndex = 3
@@ -106,7 +112,7 @@ Partial Class DraftPlotPoints
         'LblNbrOfPosToFind
         '
         Me.LblNbrOfPosToFind.AutoSize = True
-        Me.LblNbrOfPosToFind.Location = New System.Drawing.Point(426, 599)
+        Me.LblNbrOfPosToFind.Location = New System.Drawing.Point(229, 599)
         Me.LblNbrOfPosToFind.Name = "LblNbrOfPosToFind"
         Me.LblNbrOfPosToFind.Size = New System.Drawing.Size(139, 13)
         Me.LblNbrOfPosToFind.TabIndex = 3
@@ -115,7 +121,7 @@ Partial Class DraftPlotPoints
         'NumPosToFind
         '
         Me.NumPosToFind.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumPosToFind.Location = New System.Drawing.Point(429, 615)
+        Me.NumPosToFind.Location = New System.Drawing.Point(232, 615)
         Me.NumPosToFind.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.NumPosToFind.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumPosToFind.Name = "NumPosToFind"
@@ -124,19 +130,19 @@ Partial Class DraftPlotPoints
         Me.NumPosToFind.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.NumPosToFind.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
-        'BtnGenPLot
+        'BtnGenPlot
         '
-        Me.BtnGenPLot.Location = New System.Drawing.Point(429, 682)
-        Me.BtnGenPLot.Name = "BtnGenPLot"
-        Me.BtnGenPLot.Size = New System.Drawing.Size(120, 23)
-        Me.BtnGenPLot.TabIndex = 5
-        Me.BtnGenPLot.Text = "Find Points"
-        Me.BtnGenPLot.UseVisualStyleBackColor = True
+        Me.BtnGenPlot.Location = New System.Drawing.Point(232, 682)
+        Me.BtnGenPlot.Name = "BtnGenPlot"
+        Me.BtnGenPlot.Size = New System.Drawing.Size(120, 23)
+        Me.BtnGenPlot.TabIndex = 5
+        Me.BtnGenPlot.Text = "Find Points"
+        Me.BtnGenPlot.UseVisualStyleBackColor = True
         '
         'NumDistMin
         '
         Me.NumDistMin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumDistMin.Location = New System.Drawing.Point(429, 656)
+        Me.NumDistMin.Location = New System.Drawing.Point(232, 656)
         Me.NumDistMin.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.NumDistMin.Minimum = New Decimal(New Integer() {5, 0, 0, 65536})
         Me.NumDistMin.Name = "NumDistMin"
@@ -148,7 +154,7 @@ Partial Class DraftPlotPoints
         'LblDistMin
         '
         Me.LblDistMin.AutoSize = True
-        Me.LblDistMin.Location = New System.Drawing.Point(426, 640)
+        Me.LblDistMin.Location = New System.Drawing.Point(229, 640)
         Me.LblDistMin.Name = "LblDistMin"
         Me.LblDistMin.Size = New System.Drawing.Size(166, 13)
         Me.LblDistMin.TabIndex = 7
@@ -156,7 +162,7 @@ Partial Class DraftPlotPoints
         '
         'BtnClear
         '
-        Me.BtnClear.Location = New System.Drawing.Point(612, 615)
+        Me.BtnClear.Location = New System.Drawing.Point(715, 640)
         Me.BtnClear.Name = "BtnClear"
         Me.BtnClear.Size = New System.Drawing.Size(75, 23)
         Me.BtnClear.TabIndex = 9
@@ -166,26 +172,69 @@ Partial Class DraftPlotPoints
         'Lbliteration
         '
         Me.Lbliteration.AutoSize = True
-        Me.Lbliteration.Location = New System.Drawing.Point(714, 617)
+        Me.Lbliteration.Location = New System.Drawing.Point(683, 617)
         Me.Lbliteration.Name = "Lbliteration"
-        Me.Lbliteration.Size = New System.Drawing.Size(39, 13)
+        Me.Lbliteration.Size = New System.Drawing.Size(45, 13)
         Me.Lbliteration.TabIndex = 10
-        Me.Lbliteration.Text = "Label1"
+        Me.Lbliteration.Text = "Iteration"
         '
-        'Timer1
+        'TimerPoints
         '
-        Me.Timer1.Interval = 500
+        Me.TimerPoints.Interval = 500
+        '
+        'NumWells
+        '
+        Me.NumWells.Location = New System.Drawing.Point(484, 617)
+        Me.NumWells.Name = "NumWells"
+        Me.NumWells.Size = New System.Drawing.Size(120, 20)
+        Me.NumWells.TabIndex = 11
+        Me.NumWells.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'LblWells
+        '
+        Me.LblWells.AutoSize = True
+        Me.LblWells.Location = New System.Drawing.Point(481, 599)
+        Me.LblWells.Name = "LblWells"
+        Me.LblWells.Size = New System.Drawing.Size(47, 13)
+        Me.LblWells.TabIndex = 12
+        Me.LblWells.Text = "LblWells"
+        '
+        'BtnGenWells
+        '
+        Me.BtnGenWells.Location = New System.Drawing.Point(484, 656)
+        Me.BtnGenWells.Name = "BtnGenWells"
+        Me.BtnGenWells.Size = New System.Drawing.Size(120, 23)
+        Me.BtnGenWells.TabIndex = 13
+        Me.BtnGenWells.Text = "Find Wells"
+        Me.BtnGenWells.UseVisualStyleBackColor = True
+        '
+        'TimerWells
+        '
+        Me.TimerWells.Interval = 500
+        '
+        'LblIDwell
+        '
+        Me.LblIDwell.AutoSize = True
+        Me.LblIDwell.Location = New System.Drawing.Point(770, 617)
+        Me.LblIDwell.Name = "LblIDwell"
+        Me.LblIDwell.Size = New System.Drawing.Size(38, 13)
+        Me.LblIDwell.TabIndex = 14
+        Me.LblIDwell.Text = "ID puit"
         '
         'DraftPlotPoints
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(865, 727)
+        Me.Controls.Add(Me.LblIDwell)
+        Me.Controls.Add(Me.BtnGenWells)
+        Me.Controls.Add(Me.LblWells)
+        Me.Controls.Add(Me.NumWells)
         Me.Controls.Add(Me.Lbliteration)
         Me.Controls.Add(Me.BtnClear)
         Me.Controls.Add(Me.LblDistMin)
         Me.Controls.Add(Me.NumDistMin)
-        Me.Controls.Add(Me.BtnGenPLot)
+        Me.Controls.Add(Me.BtnGenPlot)
         Me.Controls.Add(Me.NumPosToFind)
         Me.Controls.Add(Me.LblNbrOfPosToFind)
         Me.Controls.Add(Me.LblCoteB)
@@ -201,6 +250,7 @@ Partial Class DraftPlotPoints
         CType(Me.NumPosToFind, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumWells, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -212,11 +262,16 @@ Partial Class DraftPlotPoints
     Friend WithEvents LblCoteB As Label
     Friend WithEvents LblNbrOfPosToFind As Label
     Friend WithEvents NumPosToFind As NumericUpDown
-    Friend WithEvents BtnGenPLot As Button
+    Friend WithEvents BtnGenPlot As Button
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents NumDistMin As NumericUpDown
     Friend WithEvents LblDistMin As Label
     Friend WithEvents BtnClear As Button
     Friend WithEvents Lbliteration As Label
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents TimerPoints As Timer
+    Friend WithEvents NumWells As NumericUpDown
+    Friend WithEvents LblWells As Label
+    Friend WithEvents BtnGenWells As Button
+    Friend WithEvents TimerWells As Timer
+    Friend WithEvents LblIDwell As Label
 End Class

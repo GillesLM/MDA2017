@@ -4,12 +4,12 @@
 ''' </summary>
 Public Class Plate
 
-    Private WellsArray As List(Of Well)
-    Private PHeigth As Double
-    Private PWeigth As Double
-    Private PClearence As Double
-    Private PWellQtt As Double
-    Private PWellFill As Double
+    Private WellsArray As New List(Of Well)
+    Private PHeigth As Double = 2
+    Private PWeigth As Double = 2
+    Private PClearence As Double = 1
+    Private PWellQtt As Double = 4
+    Private PWellFilled As Double = 0
 
     ''' <summary>
     ''' Longueur de la plaque en nombre de puits
@@ -54,26 +54,22 @@ Public Class Plate
     ''' Nombre totale de puit contenu par la plaque
     ''' </summary>
     ''' <returns>PWellQtt</returns>
-    Public Property _PWellQtt As Double
+    Public ReadOnly Property _PWellQtt As Double
         Get
-            Return PWellQtt
+            Return PHeigth * PWeigth
         End Get
-        Set(value As Double)
-            PWellQtt = value
-        End Set
     End Property
 
     ''' <summary>
     ''' Nombre de puit remplis
     ''' </summary>
     ''' <returns>PwellFill</returns>
-    Public Property _PWellFill As Double
+    Public ReadOnly Property _PWellFilled As Double
         Get
-            Return PWellFill
+            PWellFilled = WellsArray.Count
+            Return PWellFilled
         End Get
-        Set(value As Double)
-            PWellFill = value
-        End Set
+
     End Property
 
 
@@ -82,9 +78,10 @@ Public Class Plate
     ''' Contruction d'une plaque avec les valeur par defaut. Largeur de 10, Longueur de 10, espacement de 10
     ''' </summary>
     Public Sub New()
-
+        WellsArray.Add(New Well())
         PHeigth = 10
         PWeigth = 10
+        PWellQtt = 100
         PClearence = 1
 
     End Sub
@@ -106,6 +103,39 @@ Public Class Plate
 
     End Sub
 
+    ''' <summary>
+    ''' Récupère un puit à l'index indiqué
+    ''' </summary>
+    ''' <param name="index">index du puits dans la liste des puits</param>
+    ''' <returns>Type Well</returns>
+    Public Function IndexPlate(ByVal index As Integer) As Well
+
+        Return WellsArray(index)
+
+    End Function
+
+    ''' <summary>
+    ''' Récupère les coordonnées d'un puits en fonction de sont ID
+    ''' </summary>
+    ''' <param name="ID">ID du puit</param>
+    ''' <returns>type point</returns>
+    Public Function IndexPlate(ByVal ID As String) As Point
+
+        Dim temp As Well
+        temp = WellsArray.Find(Function(x) x._ID.Contains(ID))
+        Return temp._Coordonates
+
+
+    End Function
+
+    ''' <summary>
+    ''' Supprime tous les puit remplis de la plaque
+    ''' </summary>
+    Public Sub ClearPLate()
+
+        WellsArray.Clear()
+
+    End Sub
     ''' <summary>
     ''' Supprime un puit dans la collection de la plaque en renseignant son ID
     ''' </summary>
@@ -153,10 +183,10 @@ Public Class Plate
     ''' <summary>
     ''' Ajout un puit à la plaque
     ''' </summary>
-    ''' <param name="well">Le puit à ajouter</param>
-    Public Sub AddWell(ByVal well As Well)
+    ''' <param name="Twell">Le puit à ajouter</param>
+    Public Sub AddWell(ByVal Twell As Well)
 
-        WellsArray.Add(well)
+        WellsArray.Add(Twell)
 
     End Sub
 
@@ -169,6 +199,50 @@ Public Class Plate
 
 
 
+        Dim Coord As New Point(0, 0)
+        Dim Columms As Integer 'nombre de colonnes
+        Dim line As Integer 'numéro de la ligne du dernier puit
+
+        Columms = WellNbr \ 8
+        line = WellNbr - (Columms * 8)
+
+        'Varaible de comptage
+        Dim Xcounter As Integer = 0 'la position de départ sur l'axe X sera toujours la première colone : 0
+        Dim Ycounter As Integer = 0 'la position de départ sur l'axe Y sera toujours la deuxième ligne : 1, car la première ligne est donnée par l'utilisateur
+        Dim LastPos As Integer = 0 'Varaible de vérification du nombre de puits parcourus.
+
+        'déplacement vers une colonne
+        While Xcounter <= Columms
+
+
+            'déplacement vers une ligne
+            While Ycounter <= 7 And LastPos < WellNbr
+
+                Coord.X = Xcounter
+                Coord.Y = Ycounter
+
+                BaseWell._Coordonates = Coord
+                BaseWell._ID = ("ID" & LastPos)
+                WellsArray.Add(BaseWell)
+
+
+                Ycounter += 1
+                LastPos += 1
+
+
+            End While
+
+            'remise a 0 du conteur de ligne et passage à la colonne suivante
+            Ycounter = 0
+            Xcounter += 1
+        End While
+
     End Sub
 
 End Class
+
+
+
+
+
+

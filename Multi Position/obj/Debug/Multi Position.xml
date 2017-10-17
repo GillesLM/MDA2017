@@ -45,38 +45,85 @@ Multi Position
  </summary>
  <returns>Pclearance</returns>
 </member>
-<member name="P:Multi_Position.Plate._PWellpopulate">
+<member name="P:Multi_Position.Plate._PWellQtt">
  <summary>
  Nombre totale de puit contenu par la plaque
  </summary>
- <returns>PWellpopulate</returns>
+ <returns>PWellQtt</returns>
 </member>
-<member name="P:Multi_Position.Plate._PWellFill">
+<member name="P:Multi_Position.Plate._PWellFilled">
  <summary>
  Nombre de puit remplis
  </summary>
  <returns>PwellFill</returns>
-</member>
-<member name="P:Multi_Position.Plate._WellsArray">
- <summary>
- List contenant tout les puits remplis
- </summary>
- <returns>WellsArray</returns>
 </member>
 <member name="M:Multi_Position.Plate.#ctor">
  <summary>
  Contruction d'une plaque avec les valeur par defaut. Largeur de 10, Longueur de 10, espacement de 10
  </summary>
 </member>
-<member name="M:Multi_Position.Plate.#ctor(Multi_Position.Well,System.Double,System.Double,System.Int32,System.Double)">
+<member name="M:Multi_Position.Plate.#ctor(Multi_Position.Well,System.Double,System.Double,System.Double)">
  <summary>
- Contruction d'une plaque de puits
+ Contruction d'une plaque de puits. Largeur et longeur en nombre de puits
  </summary>
  <param name="Puit">Variable contenant les caractérisques du premier puit : coin gauche côté µscope</param>
  <param name="Largeur">Largeur de la plaque en nombre de puits</param>
  <param name="Longueur">Longeur de la plaque en nombre de puits</param>
- <param name="NbrPuit">Nombre de puits que tient la plaque</param>
  <param name="Entrax">Entrax entre les puits en mm</param>
+</member>
+<member name="M:Multi_Position.Plate.IndexPlate(System.Int32)">
+ <summary>
+ Récupère un puit à l'index indiqué
+ </summary>
+ <param name="index">index du puits dans la liste des puits</param>
+ <returns>Type Well</returns>
+</member>
+<member name="M:Multi_Position.Plate.IndexPlate(System.String)">
+ <summary>
+ Récupère les coordonnées d'un puits en fonction de sont ID
+ </summary>
+ <param name="ID">ID du puit</param>
+ <returns>type point</returns>
+</member>
+<member name="M:Multi_Position.Plate.ClearPLate">
+ <summary>
+ Supprime tous les puit remplis de la plaque
+ </summary>
+</member>
+<member name="M:Multi_Position.Plate.DeleteWell(System.String)">
+ <summary>
+ Supprime un puit dans la collection de la plaque en renseignant son ID
+ </summary>
+ <param name="ID">ID du puit</param>
+ <returns>True : le puit a été retiré</returns>
+</member>
+<member name="M:Multi_Position.Plate.DeleteWell(Multi_Position.Well)">
+ <summary>
+ Supprime un puit de la colllection de la plaque en renseignant le puit
+ </summary>
+ <param name="Well">le puit a retirer</param>
+ <returns>True si le puit a été retiré</returns>
+</member>
+<member name="M:Multi_Position.Plate.DeleteWell(System.Int32,System.Int32)">
+ <summary>
+  Supprime un puit de la collection de la plaque en renseignant ses coordonnée dans la plaque
+ </summary>
+ <param name="X">Coordonnée X du puit a supprimer</param>
+ <param name="Y">Coordonnée Y du puit a supprimer</param>
+ <returns></returns>
+</member>
+<member name="M:Multi_Position.Plate.AddWell(Multi_Position.Well)">
+ <summary>
+ Ajout un puit à la plaque
+ </summary>
+ <param name="Twell">Le puit à ajouter</param>
+</member>
+<member name="M:Multi_Position.Plate.GenWells(Multi_Position.Well,System.Int32)">
+ <summary>
+ Génération de "WellNbr" puits dans une plaque.
+ </summary>
+ <param name="BaseWell">Puit sur lequel se base la generation</param>
+ <param name="WellNbr">Nombre de puit a générer</param>
 </member>
 <member name="M:Multi_Position.Algèbre.Pythagore(System.Drawing.Point,System.Drawing.Point)">
  <summary>
@@ -154,7 +201,7 @@ Multi Position
  Contruction de la zone avec les paramètre par défaut : largeur 10, Longueur 10, Distance mini 1, nombre de point 1
  </summary>
 </member>
-<member name="M:Multi_Position.Well.#ctor(System.Double,System.Double,System.Double,System.Double)">
+<member name="M:Multi_Position.Well.#ctor(System.Double,System.Double,System.Double,System.Double,System.Drawing.Point)">
  <summary>
  Construction de la zone avec les attributs données
  </summary>

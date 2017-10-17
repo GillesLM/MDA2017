@@ -6,14 +6,13 @@
 Public Class Well
 
     Private ID As String           'Numéro d'identification du puits
-    Private Coordonates As Point    'Coordonnées du puit sur une plaque
+    Private Coordonates As New Point    'Coordonnées du puit sur une plaque
     Private Largeur As Double       'largeur de la zone contenant les points 
     Private Longueur As Double      'longeur de la zone contenant les points
     Private DistanceMin As Double   'distance minimum séparant les points
     Private NumberOfPoint As Double    'Nombre de point dans la zone
 
     Private IterationMax As UInteger = 10000 'Nombre d'iération pour trouver les points
-    Private RndPoint As New Point()     'Point aléatoire   
     Private RArrey As New List(Of Point)   'tableau de point contenant les points
 
 
@@ -131,6 +130,7 @@ Public Class Well
         Longueur = 10
         DistanceMin = 1
         NumberOfPoint = 1
+        Coordonates = New Point(1, 1)
 
     End Sub
 
@@ -141,12 +141,13 @@ Public Class Well
     ''' <param name="CoteB">Longueur de la zone</param>
     ''' <param name="Distance">Distance minimal entre les points</param>
     ''' <param name="Count">Nombre de point contenu dans la zone</param>
-    Public Sub New(ByVal CoteA As Double, ByVal CoteB As Double, ByVal Distance As Double, ByVal Count As Double)
+    Public Sub New(ByVal CoteA As Double, ByVal CoteB As Double, ByVal Distance As Double, ByVal Count As Double, ByVal coord As Point)
 
         Largeur = CoteA
         Longueur = CoteB
         DistanceMin = Distance
         NumberOfPoint = Count
+        Coordonates = coord
 
     End Sub
 
@@ -159,6 +160,7 @@ Public Class Well
         Dim Count As Integer = 0        'compteur de points trouvés
         Dim Flag As Boolean = False     'Indique si un point a été trouvé
         Dim Distance As Integer = 0     ' distance calculé entre 2 point
+        Dim RndPoint As New Point() 'Point aléatoire 
 
         'Génération du premier point que l'on ajout au tableau de point aléatoire
         RndPoint = GenOnePoint(Largeur, Longueur)
