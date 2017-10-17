@@ -77,12 +77,13 @@ Multi Position
  <param name="Longueur">Longeur de la plaque en nombre de puits</param>
  <param name="Entrax">Entrax entre les puits en mm</param>
 </member>
-<member name="M:Multi_Position.Plate.GenWells(Multi_Position.Well,System.Int32)">
+<member name="M:Multi_Position.Plate.GenWell(System.Double,System.Double)">
  <summary>
- Génération de "WellNbr" puits dans une plaque.
+ Génération d'un puit au coordonnée X Y
  </summary>
- <param name="BaseWell">Puit sur lequel se base la generation</param>
- <param name="WellNbr">Nombre de puit a générer</param>
+ <param name="X">coordonnée X du puit</param>
+ <param name="Y">coordonnée Y du puit</param>
+ <returns>rend un puit</returns>
 </member>
 <member name="M:Multi_Position.Algèbre.Pythagore(System.Drawing.Point,System.Drawing.Point)">
  <summary>
@@ -160,7 +161,7 @@ Multi Position
  Contruction de la zone avec les paramètre par défaut : largeur 10, Longueur 10, Distance mini 1, nombre de point 1
  </summary>
 </member>
-<member name="M:Multi_Position.Well.#ctor(System.Double,System.Double,System.Double,System.Double,System.Drawing.Point)">
+<member name="M:Multi_Position.Well.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
  <summary>
  Construction de la zone avec les attributs données
  </summary>

@@ -115,22 +115,14 @@ Public Class Plate
 
     End Sub
 
+    Public Sub GenerateWells(ByVal WellNbr As Integer)
 
-
-    ''' <summary>
-    ''' Génération de "WellNbr" puits dans une plaque.
-    ''' </summary>
-    ''' <param name="BaseWell">Puit sur lequel se base la generation</param>
-    ''' <param name="WellNbr">Nombre de puit a générer</param>
-    Public Sub GenWells(ByVal BaseWell As Well, ByVal WellNbr As Integer)
-
-
-        Dim TempWell As New Well()
-        Dim Coord As New Point(0, 0)
+        'Variable utilisateur
         Dim Columms As Integer 'nombre de colonnes
         Dim line As Integer 'numéro de la ligne du dernier puit
 
-        TempWell = BaseWell
+        'calcul de la position du dernier point et du nombre de colonne
+
         Columms = WellNbr \ 8
         line = WellNbr - (Columms * 8)
 
@@ -139,22 +131,17 @@ Public Class Plate
         Dim Ycounter As Integer = 0 'la position de départ sur l'axe Y sera toujours la deuxième ligne : 1, car la première ligne est donnée par l'utilisateur
         Dim LastPos As Integer = 0 'Varaible de vérification du nombre de puits parcourus.
 
-        'déplacement vers une colonne
         While Xcounter <= Columms
 
 
             'déplacement vers une ligne
             While Ycounter <= 7 And LastPos < WellNbr
 
-                Coord.X = Xcounter
-                Coord.Y = Ycounter
-                TempWell._Coordonates = Coord
-                TempWell._ID = "ID" & LastPos
-                WellsArray.Add(BaseWell)
+                WellsArray.Add(GenWell(Xcounter, Ycounter))
 
+                'passage à la ligne suivante
                 Ycounter += 1
                 LastPos += 1
-
 
             End While
 
@@ -163,7 +150,23 @@ Public Class Plate
             Xcounter += 1
         End While
 
+
     End Sub
+
+    ''' <summary>
+    ''' Génération d'un puit au coordonnée X Y
+    ''' </summary>
+    ''' <param name="X">coordonnée X du puit</param>
+    ''' <param name="Y">coordonnée Y du puit</param>
+    ''' <returns>rend un puit</returns>
+    Private Function GenWell(ByVal X As Double, ByVal Y As Double) As Well
+
+        Dim Well As New Well(6000, 6000, 250, 10, X, Y)
+        Well._ID = "ID" & WellsArray.Count
+        Well.GenPoints()
+        Return Well
+
+    End Function
 
 End Class
 

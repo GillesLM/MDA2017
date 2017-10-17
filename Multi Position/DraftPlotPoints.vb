@@ -94,7 +94,7 @@ Public Class DraftPlotPoints
 
     Private Sub BtnGenWells_Click(sender As Object, e As EventArgs) Handles BtnGenWells.Click
 
-        Plaque.GenWells(Puit, WellNbr)
+        Plaque.GenerateWells(WellNbr)
         TimerWells.Enabled = True
 
     End Sub
@@ -106,6 +106,9 @@ Public Class DraftPlotPoints
 
         If Iteration < Plaque._PWellFilled Then
 
+            well = Plaque._WellsArray.Item(Iteration)
+
+            LblIDwell.Text = Plaque._WellsArray.Item(Iteration)._ID
             Me.Chart1.Series("Series1").Points.AddXY(well._Coordonates.X, well._Coordonates.Y)
             Iteration += 1
 

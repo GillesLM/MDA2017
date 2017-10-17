@@ -6,7 +6,7 @@
 Public Class Well
 
     Private ID As String           'Numéro d'identification du puits
-    Private Coordonates As New Point    'Coordonnées du puit sur une plaque
+    Private Coordonates As New Point()    'Coordonnées du puit sur une plaque
     Private Largeur As Double       'largeur de la zone contenant les points 
     Private Longueur As Double      'longeur de la zone contenant les points
     Private DistanceMin As Double   'distance minimum séparant les points
@@ -141,13 +141,14 @@ Public Class Well
     ''' <param name="CoteB">Longueur de la zone</param>
     ''' <param name="Distance">Distance minimal entre les points</param>
     ''' <param name="Count">Nombre de point contenu dans la zone</param>
-    Public Sub New(ByVal CoteA As Double, ByVal CoteB As Double, ByVal Distance As Double, ByVal Count As Double, ByVal coord As Point)
+    Public Sub New(ByVal CoteA As Double, ByVal CoteB As Double, ByVal Distance As Double, ByVal Count As Double, ByVal X As Double, ByVal Y As Double)
 
         Largeur = CoteA
         Longueur = CoteB
         DistanceMin = Distance
         NumberOfPoint = Count
-        Coordonates = coord
+        Coordonates.X = X
+        Coordonates.Y = Y
 
     End Sub
 
