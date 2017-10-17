@@ -57,6 +57,12 @@ Multi Position
  </summary>
  <returns>PwellFill</returns>
 </member>
+<member name="P:Multi_Position.Plate._WellsArray">
+ <summary>
+ Collection de puits remplis dans la plaque
+ </summary>
+ <returns>List de puit</returns>
+</member>
 <member name="M:Multi_Position.Plate.#ctor">
  <summary>
  Contruction d'une plaque avec les valeur par defaut. Largeur de 10, Longueur de 10, espacement de 10
@@ -70,53 +76,6 @@ Multi Position
  <param name="Largeur">Largeur de la plaque en nombre de puits</param>
  <param name="Longueur">Longeur de la plaque en nombre de puits</param>
  <param name="Entrax">Entrax entre les puits en mm</param>
-</member>
-<member name="M:Multi_Position.Plate.IndexPlate(System.Int32)">
- <summary>
- Récupère un puit à l'index indiqué
- </summary>
- <param name="index">index du puits dans la liste des puits</param>
- <returns>Type Well</returns>
-</member>
-<member name="M:Multi_Position.Plate.IndexPlate(System.String)">
- <summary>
- Récupère les coordonnées d'un puits en fonction de sont ID
- </summary>
- <param name="ID">ID du puit</param>
- <returns>type point</returns>
-</member>
-<member name="M:Multi_Position.Plate.ClearPLate">
- <summary>
- Supprime tous les puit remplis de la plaque
- </summary>
-</member>
-<member name="M:Multi_Position.Plate.DeleteWell(System.String)">
- <summary>
- Supprime un puit dans la collection de la plaque en renseignant son ID
- </summary>
- <param name="ID">ID du puit</param>
- <returns>True : le puit a été retiré</returns>
-</member>
-<member name="M:Multi_Position.Plate.DeleteWell(Multi_Position.Well)">
- <summary>
- Supprime un puit de la colllection de la plaque en renseignant le puit
- </summary>
- <param name="Well">le puit a retirer</param>
- <returns>True si le puit a été retiré</returns>
-</member>
-<member name="M:Multi_Position.Plate.DeleteWell(System.Int32,System.Int32)">
- <summary>
-  Supprime un puit de la collection de la plaque en renseignant ses coordonnée dans la plaque
- </summary>
- <param name="X">Coordonnée X du puit a supprimer</param>
- <param name="Y">Coordonnée Y du puit a supprimer</param>
- <returns></returns>
-</member>
-<member name="M:Multi_Position.Plate.AddWell(Multi_Position.Well)">
- <summary>
- Ajout un puit à la plaque
- </summary>
- <param name="Twell">Le puit à ajouter</param>
 </member>
 <member name="M:Multi_Position.Plate.GenWells(Multi_Position.Well,System.Int32)">
  <summary>

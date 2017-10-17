@@ -64,7 +64,7 @@ Public Class DraftPlotPoints
 
         Me.Chart1.Series("Series1").Points.Clear()
         Puit._PointsArray.Clear()
-        Plaque.ClearPLate()
+        Plaque._WellsArray.Clear()
         Iteration = 0
         TimerWells.Enabled = False
         TimerPoints.Enabled = False
@@ -106,9 +106,6 @@ Public Class DraftPlotPoints
 
         If Iteration < Plaque._PWellFilled Then
 
-
-            well = Plaque.IndexPlate(Iteration)
-            LblIDwell.Text = well._ID
             Me.Chart1.Series("Series1").Points.AddXY(well._Coordonates.X, well._Coordonates.Y)
             Iteration += 1
 
