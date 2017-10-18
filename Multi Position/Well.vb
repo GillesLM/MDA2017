@@ -204,4 +204,12 @@ Public Class Well
 
     End Sub
 
+    Shared Operator +(ByVal WellA As Well, ByVal WellB As Well) As Well
+
+        Dim Result As New Well()
+        Result = WellA
+        Result.RArrey.AddRange(WellB.RArrey)
+        Return Result
+    End Operator
+
 End Class

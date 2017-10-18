@@ -1,5 +1,5 @@
 ﻿
-Public Class DraftPlotPoints
+Public Class PlotWells
 
     Dim Xtemp As Double
     Dim Ytemp As Double
