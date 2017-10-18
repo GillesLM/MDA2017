@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Multi_Position.PLotPoints
+            Me.MainForm = Global.Multi_Position.PlotWells
         End Sub
     End Class
 End Namespace

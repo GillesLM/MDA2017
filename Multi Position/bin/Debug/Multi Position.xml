@@ -22,14 +22,168 @@ Multi Position
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="T:Multi_Position.PositionFunctions">
+<member name="T:Multi_Position.Plate">
  <summary>
- Ce module a pour but la génération de N point de coordonnées X, Y aléatoire dans une aire donnée.
+ la Classe plate génère une plaque de X puits.
  </summary>
 </member>
-<member name="M:Multi_Position.PositionFunctions.PosGen">
+<member name="P:Multi_Position.Plate._PHeigth">
  <summary>
- Function de génération de position aléatoire pour un point
+ Longueur de la plaque en nombre de puits
+ </summary>
+ <returns>PHeigth</returns>
+</member>
+<member name="P:Multi_Position.Plate._PWeigth">
+ <summary>
+ Largeur de la plaque en nombre de puits
+ </summary>
+ <returns>Pweigth</returns>
+</member>
+<member name="P:Multi_Position.Plate._PClearence">
+ <summary>
+ Ecart entre les centre de chaque puits
+ </summary>
+ <returns>Pclearance</returns>
+</member>
+<member name="P:Multi_Position.Plate._PWellQtt">
+ <summary>
+ Nombre totale de puit contenu par la plaque
+ </summary>
+ <returns>PWellQtt</returns>
+</member>
+<member name="P:Multi_Position.Plate._PWellFilled">
+ <summary>
+ Nombre de puit remplis
+ </summary>
+ <returns>PwellFill</returns>
+</member>
+<member name="P:Multi_Position.Plate._WellsArray">
+ <summary>
+ Collection de puits remplis dans la plaque
+ </summary>
+ <returns>List de puit</returns>
+</member>
+<member name="M:Multi_Position.Plate.#ctor">
+ <summary>
+ Contruction d'une plaque avec les valeur par defaut. Largeur de 10, Longueur de 10, espacement de 10
+ </summary>
+</member>
+<member name="M:Multi_Position.Plate.#ctor(Multi_Position.Well,System.Double,System.Double,System.Double)">
+ <summary>
+ Contruction d'une plaque de puits. Largeur et longeur en nombre de puits
+ </summary>
+ <param name="Puit">Variable contenant les caractérisques du premier puit : coin gauche côté µscope</param>
+ <param name="Largeur">Largeur de la plaque en nombre de puits</param>
+ <param name="Longueur">Longeur de la plaque en nombre de puits</param>
+ <param name="Entrax">Entrax entre les puits en mm</param>
+</member>
+<member name="M:Multi_Position.Plate.GenWell(System.Double,System.Double)">
+ <summary>
+ Génération d'un puit au coordonnée X Y
+ </summary>
+ <param name="X">coordonnée X du puit</param>
+ <param name="Y">coordonnée Y du puit</param>
+ <returns>rend un puit</returns>
+</member>
+<member name="P:Multi_Position.PlotWells._ActuelWell">
+ <summary>
+ Plaque généré par dans la formulaire PLotWells
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Multi_Position.Algèbre.Pythagore(System.Drawing.Point,System.Drawing.Point)">
+ <summary>
+ Calcul de la distance entre 2 points de coordonnée XY.
+ </summary>
+ <param name="PointA">Premier point</param>
+ <param name="PointB">Deuxième point</param>
+ <returns></returns>
+</member>
+<member name="M:Multi_Position.Algèbre.GenOnePoint(System.Double,System.Double)">
+ <summary>
+ Génération d'un point aléatoire
+ </summary>
+ <param name="AbscissScale">2chelle des abscisse</param>
+ <param name="OrdonateScale"></param>
+ <returns>A point</returns>
+</member>
+<member name="T:Multi_Position.Well">
+ <summary>
+ Class de zone de point. Elle a pour but la création d'aire contenant plusieurs point dont la position est déterminé de manière aléatoire.
+ Cette classe nécessite le module algèbre, qui contient les fonction de génératino d'un point aléatoire et le calcul de la distance entre 2 points
+ 
+ </summary>
+</member>
+<member name="P:Multi_Position.Well._PointsArray">
+ <summary>
+ Tableau des point peuplant la zone
+ </summary>
+ <returns>Retourne un tableau du type arraylist</returns>
+</member>
+<member name="P:Multi_Position.Well._AreaWidth">
+ <summary>
+ largeur de la zone
+ </summary>
+ <returns>Retourne une valeur du type double</returns>
+</member>
+<member name="P:Multi_Position.Well._AreaHeight">
+ <summary>
+ longueur de la zone
+ </summary>
+ <returns>Retourne une valeur du type double</returns>
+</member>
+<member name="P:Multi_Position.Well._Clearance">
+ <summary>
+ Distance minimum entre chaque point
+ </summary>
+ <returns>Retourne une valeur de type double</returns>
+</member>
+<member name="P:Multi_Position.Well._CountAsk">
+ <summary>
+ nombre de point a trouver
+ </summary>
+ <returns>retourne une valeur du type double</returns>
+</member>
+<member name="P:Multi_Position.Well._MaxIteration">
+ <summary>
+ Maximum d'iteration pour trouver les points aléatoire
+ </summary>
+ <returns>le nombre maximum d'itération pour trouver les points aléatoire</returns>
+</member>
+<member name="P:Multi_Position.Well._ID">
+ <summary>
+ Numéro d'identification du puit
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Multi_Position.Well._Coordonates">
+ <summary>
+ Coordonnées XY du point sur une plaque.
+ </summary>
+ <returns>Donnée du type point</returns>
+</member>
+<member name="M:Multi_Position.Well.#ctor">
+ <summary>
+ Contruction de la zone avec les paramètre par défaut : largeur 10, Longueur 10, Distance mini 1, nombre de point 1
+ </summary>
+</member>
+<member name="M:Multi_Position.Well.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Construction de la zone avec les attributs données
+ </summary>
+ <param name="CoteA">largeur de la zone</param>
+ <param name="CoteB">Longueur de la zone</param>
+ <param name="Distance">Distance minimal entre les points</param>
+ <param name="Count">Nombre de point contenu dans la zone</param>
+</member>
+<member name="M:Multi_Position.Well.GenPoints">
+ <summary>
+ Génération des points dans la zone
+ </summary>
+</member>
+<member name="M:Multi_Position.Well.SortPoint(System.Collections.Generic.List{System.Drawing.Point}@)">
+ <summary>
+ Fonction qui trie les points selon les X croissants.
  </summary>
 </member>
 </members>
