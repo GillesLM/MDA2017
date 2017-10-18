@@ -1,30 +1,27 @@
 ﻿Public Class PlotPositions
 
-    Dim Iteration As Integer 0
+    Dim Iteration As Integer = 0
 
-    Dim WellList As List(Of Well)
+    Dim ActuelWell As Well
+
+
 
     Private Sub PlotPositions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.ChrPosInWell.Series("Positions").Points.Clear()
-        WellList = PlotWells._ActuelWell
-        TimerShowPosition.Enabled = True
+        ActuelWell = PlotWells._ActuelWell
 
+
+        For i As Integer = 0 To ActuelWell._PointsArray.Count - 1
+            Me.ChrPosInWell.Series("Positions").Points.AddXY(ActuelWell._PointsArray(i).X, ActuelWell._PointsArray(i).Y)
+            LblWell_ID.Text = ActuelWell._ID
+        Next
 
     End Sub
 
-    Private Sub TimerShowPosition_Tick(sender As Object, e As EventArgs) Handles TimerShowPosition.Tick
 
-        Dim PointTemp As Point
 
-        If Iteration < WellList.Last._PointsArray.Count Then
-
-            PointTemp = Puit._PointsArray(Iteration)
-            Me.Chart1.Series("Series1").Points.AddXY(PointTemp.X, PointTemp.Y)
-            Iteration += 1
-
-        End If
-
+    Private Sub PlotPositions_Closed(sender As Object, e As EventArgs) Handles Me.Closed
 
     End Sub
 End Class

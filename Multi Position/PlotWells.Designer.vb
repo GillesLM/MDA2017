@@ -33,18 +33,16 @@ Partial Class PlotWells
         Me.LblCoteB = New System.Windows.Forms.Label()
         Me.LblNbrOfPosToFind = New System.Windows.Forms.Label()
         Me.NumPosToFind = New System.Windows.Forms.NumericUpDown()
-        Me.BtnGenPlot = New System.Windows.Forms.Button()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.NumDistMin = New System.Windows.Forms.NumericUpDown()
         Me.LblDistMin = New System.Windows.Forms.Label()
         Me.BtnClear = New System.Windows.Forms.Button()
         Me.Lbliteration = New System.Windows.Forms.Label()
-        Me.TimerPoints = New System.Windows.Forms.Timer(Me.components)
         Me.NumWells = New System.Windows.Forms.NumericUpDown()
         Me.LblWells = New System.Windows.Forms.Label()
         Me.BtnGenWells = New System.Windows.Forms.Button()
-        Me.TimerWells = New System.Windows.Forms.Timer(Me.components)
         Me.LblIDwell = New System.Windows.Forms.Label()
+        Me.TimerShowPositins = New System.Windows.Forms.Timer(Me.components)
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,15 +128,6 @@ Partial Class PlotWells
         Me.NumPosToFind.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.NumPosToFind.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
-        'BtnGenPlot
-        '
-        Me.BtnGenPlot.Location = New System.Drawing.Point(232, 682)
-        Me.BtnGenPlot.Name = "BtnGenPlot"
-        Me.BtnGenPlot.Size = New System.Drawing.Size(120, 23)
-        Me.BtnGenPlot.TabIndex = 5
-        Me.BtnGenPlot.Text = "Find Points"
-        Me.BtnGenPlot.UseVisualStyleBackColor = True
-        '
         'NumDistMin
         '
         Me.NumDistMin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
@@ -178,10 +167,6 @@ Partial Class PlotWells
         Me.Lbliteration.TabIndex = 10
         Me.Lbliteration.Text = "Iteration"
         '
-        'TimerPoints
-        '
-        Me.TimerPoints.Interval = 500
-        '
         'NumWells
         '
         Me.NumWells.Location = New System.Drawing.Point(484, 617)
@@ -208,10 +193,6 @@ Partial Class PlotWells
         Me.BtnGenWells.Text = "Generate plate"
         Me.BtnGenWells.UseVisualStyleBackColor = True
         '
-        'TimerWells
-        '
-        Me.TimerWells.Interval = 500
-        '
         'LblIDwell
         '
         Me.LblIDwell.AutoSize = True
@@ -220,6 +201,9 @@ Partial Class PlotWells
         Me.LblIDwell.Size = New System.Drawing.Size(38, 13)
         Me.LblIDwell.TabIndex = 14
         Me.LblIDwell.Text = "ID puit"
+        '
+        'TimerShowPositins
+        '
         '
         'PlotWells
         '
@@ -234,7 +218,6 @@ Partial Class PlotWells
         Me.Controls.Add(Me.BtnClear)
         Me.Controls.Add(Me.LblDistMin)
         Me.Controls.Add(Me.NumDistMin)
-        Me.Controls.Add(Me.BtnGenPlot)
         Me.Controls.Add(Me.NumPosToFind)
         Me.Controls.Add(Me.LblNbrOfPosToFind)
         Me.Controls.Add(Me.LblCoteB)
@@ -262,16 +245,14 @@ Partial Class PlotWells
     Friend WithEvents LblCoteB As Label
     Friend WithEvents LblNbrOfPosToFind As Label
     Friend WithEvents NumPosToFind As NumericUpDown
-    Friend WithEvents BtnGenPlot As Button
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents NumDistMin As NumericUpDown
     Friend WithEvents LblDistMin As Label
     Friend WithEvents BtnClear As Button
     Friend WithEvents Lbliteration As Label
-    Friend WithEvents TimerPoints As Timer
     Friend WithEvents NumWells As NumericUpDown
     Friend WithEvents LblWells As Label
     Friend WithEvents BtnGenWells As Button
-    Friend WithEvents TimerWells As Timer
     Friend WithEvents LblIDwell As Label
+    Friend WithEvents TimerShowPositins As Timer
 End Class

@@ -161,7 +161,7 @@ Public Class Plate
     ''' <returns>rend un puit</returns>
     Private Function GenWell(ByVal X As Double, ByVal Y As Double) As Well
 
-        Dim Well As New Well(6000, 6000, 250, 10, X, Y)
+        Dim Well As New Well(6000, 6000, 250, 3, X, Y)
         Well._ID = "ID" & WellsArray.Count
         Well.GenPoints()
         Return Well

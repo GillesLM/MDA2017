@@ -85,6 +85,12 @@ Multi Position
  <param name="Y">coordonnée Y du puit</param>
  <returns>rend un puit</returns>
 </member>
+<member name="P:Multi_Position.PlotWells._ActuelWell">
+ <summary>
+ Plaque généré par dans la formulaire PLotWells
+ </summary>
+ <returns></returns>
+</member>
 <member name="M:Multi_Position.Algèbre.Pythagore(System.Drawing.Point,System.Drawing.Point)">
  <summary>
  Calcul de la distance entre 2 points de coordonnée XY.
