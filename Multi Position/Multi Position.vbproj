@@ -73,12 +73,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Plate.vb" />
-    <Compile Include="DraftPlotPoints.vb">
+    <Compile Include="PlotPositions.Designer.vb">
+      <DependentUpon>PlotPositions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlotPositions.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DraftPlotPoints.Designer.vb">
-      <DependentUpon>DraftPlotPoints.vb</DependentUpon>
+    <Compile Include="Plate.vb" />
+    <Compile Include="PlotWells.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlotWells.Designer.vb">
+      <DependentUpon>PlotWells.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Agebre.vb" />
@@ -100,14 +106,17 @@
     <Compile Include="Well.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PlotPositions.resx">
+      <DependentUpon>PlotPositions.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="DraftPlotPoints.resx">
-      <DependentUpon>DraftPlotPoints.vb</DependentUpon>
+    <EmbeddedResource Include="PlotWells.resx">
+      <DependentUpon>PlotWells.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

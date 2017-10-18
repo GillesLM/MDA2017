@@ -45,4 +45,5 @@ F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\b
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\bin\Debug\Multi Position.exe
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\bin\Debug\Multi Position.pdb
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\bin\Debug\Multi Position.xml
-F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\obj\Debug\Multi_Position.DraftPlotPoints.resources
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\obj\Debug\Multi_Position.PlotPositions.resources
+F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\obj\Debug\Multi_Position.PlotWells.resources

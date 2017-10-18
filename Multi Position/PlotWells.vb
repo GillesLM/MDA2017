@@ -10,7 +10,16 @@ Public Class PlotWells
     Dim Wait As Boolean = True
     Dim Iteration As Integer = 0
 
+    ''' <summary>
+    ''' Plaque généré par dans la formulaire PLotWells
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property _ActuelWell As Well
+        Get
+            Return Plaque._WellsArray(Iteration)
+        End Get
 
+    End Property
 
     Private Sub DraftPlotPoints_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -110,6 +119,9 @@ Public Class PlotWells
 
             LblIDwell.Text = Plaque._WellsArray.Item(Iteration)._ID
             Me.Chart1.Series("Series1").Points.AddXY(well._Coordonates.X, well._Coordonates.Y)
+            PlotPositions.ShowDialog()
+
+
             Iteration += 1
 
         End If

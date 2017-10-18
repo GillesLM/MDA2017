@@ -205,7 +205,7 @@ Partial Class PlotWells
         Me.BtnGenWells.Name = "BtnGenWells"
         Me.BtnGenWells.Size = New System.Drawing.Size(120, 23)
         Me.BtnGenWells.TabIndex = 13
-        Me.BtnGenWells.Text = "Find Wells"
+        Me.BtnGenWells.Text = "Generate plate"
         Me.BtnGenWells.UseVisualStyleBackColor = True
         '
         'TimerWells
@@ -221,7 +221,7 @@ Partial Class PlotWells
         Me.LblIDwell.TabIndex = 14
         Me.LblIDwell.Text = "ID puit"
         '
-        'DraftPlotPoints
+        'PlotWells
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -242,7 +242,7 @@ Partial Class PlotWells
         Me.Controls.Add(Me.NumCoteB)
         Me.Controls.Add(Me.NumCoteA)
         Me.Controls.Add(Me.Chart1)
-        Me.Name = "DraftPlotPoints"
+        Me.Name = "PlotWells"
         Me.Text = "Plot Point"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).EndInit()
