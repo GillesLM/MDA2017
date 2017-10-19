@@ -23,14 +23,10 @@ Partial Class PlotWells
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.NumCoteA = New System.Windows.Forms.NumericUpDown()
-        Me.NumCoteB = New System.Windows.Forms.NumericUpDown()
-        Me.LblCoteA = New System.Windows.Forms.Label()
-        Me.LblCoteB = New System.Windows.Forms.Label()
         Me.LblNbrOfPosToFind = New System.Windows.Forms.Label()
         Me.NumPosToFind = New System.Windows.Forms.NumericUpDown()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
@@ -44,8 +40,6 @@ Partial Class PlotWells
         Me.LblIDwell = New System.Windows.Forms.Label()
         Me.TimerShowPositins = New System.Windows.Forms.Timer(Me.components)
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumPosToFind, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,63 +48,25 @@ Partial Class PlotWells
         '
         'Chart1
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(12, 12)
         Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Chart1.Series.Add(Series2)
         Me.Chart1.Size = New System.Drawing.Size(841, 570)
         Me.Chart1.TabIndex = 1
         Me.Chart1.Text = "Chart1"
         '
-        'NumCoteA
-        '
-        Me.NumCoteA.Location = New System.Drawing.Point(28, 615)
-        Me.NumCoteA.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
-        Me.NumCoteA.Name = "NumCoteA"
-        Me.NumCoteA.Size = New System.Drawing.Size(120, 20)
-        Me.NumCoteA.TabIndex = 2
-        Me.NumCoteA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumCoteA.Value = New Decimal(New Integer() {100, 0, 0, 0})
-        '
-        'NumCoteB
-        '
-        Me.NumCoteB.Location = New System.Drawing.Point(28, 656)
-        Me.NumCoteB.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
-        Me.NumCoteB.Name = "NumCoteB"
-        Me.NumCoteB.Size = New System.Drawing.Size(120, 20)
-        Me.NumCoteB.TabIndex = 2
-        Me.NumCoteB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumCoteB.Value = New Decimal(New Integer() {100, 0, 0, 0})
-        '
-        'LblCoteA
-        '
-        Me.LblCoteA.AutoSize = True
-        Me.LblCoteA.Location = New System.Drawing.Point(25, 599)
-        Me.LblCoteA.Name = "LblCoteA"
-        Me.LblCoteA.Size = New System.Drawing.Size(95, 13)
-        Me.LblCoteA.TabIndex = 3
-        Me.LblCoteA.Text = "Largeur de la zone"
-        '
-        'LblCoteB
-        '
-        Me.LblCoteB.AutoSize = True
-        Me.LblCoteB.Location = New System.Drawing.Point(25, 640)
-        Me.LblCoteB.Name = "LblCoteB"
-        Me.LblCoteB.Size = New System.Drawing.Size(104, 13)
-        Me.LblCoteB.TabIndex = 3
-        Me.LblCoteB.Text = "Longueur de la zone"
-        '
         'LblNbrOfPosToFind
         '
         Me.LblNbrOfPosToFind.AutoSize = True
-        Me.LblNbrOfPosToFind.Location = New System.Drawing.Point(229, 599)
+        Me.LblNbrOfPosToFind.Location = New System.Drawing.Point(386, 599)
         Me.LblNbrOfPosToFind.Name = "LblNbrOfPosToFind"
         Me.LblNbrOfPosToFind.Size = New System.Drawing.Size(139, 13)
         Me.LblNbrOfPosToFind.TabIndex = 3
@@ -119,7 +75,7 @@ Partial Class PlotWells
         'NumPosToFind
         '
         Me.NumPosToFind.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumPosToFind.Location = New System.Drawing.Point(232, 615)
+        Me.NumPosToFind.Location = New System.Drawing.Point(389, 615)
         Me.NumPosToFind.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.NumPosToFind.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumPosToFind.Name = "NumPosToFind"
@@ -131,7 +87,7 @@ Partial Class PlotWells
         'NumDistMin
         '
         Me.NumDistMin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumDistMin.Location = New System.Drawing.Point(232, 656)
+        Me.NumDistMin.Location = New System.Drawing.Point(543, 617)
         Me.NumDistMin.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.NumDistMin.Minimum = New Decimal(New Integer() {5, 0, 0, 65536})
         Me.NumDistMin.Name = "NumDistMin"
@@ -143,7 +99,7 @@ Partial Class PlotWells
         'LblDistMin
         '
         Me.LblDistMin.AutoSize = True
-        Me.LblDistMin.Location = New System.Drawing.Point(229, 640)
+        Me.LblDistMin.Location = New System.Drawing.Point(540, 598)
         Me.LblDistMin.Name = "LblDistMin"
         Me.LblDistMin.Size = New System.Drawing.Size(166, 13)
         Me.LblDistMin.TabIndex = 7
@@ -161,7 +117,7 @@ Partial Class PlotWells
         'Lbliteration
         '
         Me.Lbliteration.AutoSize = True
-        Me.Lbliteration.Location = New System.Drawing.Point(683, 617)
+        Me.Lbliteration.Location = New System.Drawing.Point(712, 617)
         Me.Lbliteration.Name = "Lbliteration"
         Me.Lbliteration.Size = New System.Drawing.Size(45, 13)
         Me.Lbliteration.TabIndex = 10
@@ -169,7 +125,7 @@ Partial Class PlotWells
         '
         'NumWells
         '
-        Me.NumWells.Location = New System.Drawing.Point(484, 617)
+        Me.NumWells.Location = New System.Drawing.Point(250, 617)
         Me.NumWells.Name = "NumWells"
         Me.NumWells.Size = New System.Drawing.Size(120, 20)
         Me.NumWells.TabIndex = 11
@@ -178,11 +134,11 @@ Partial Class PlotWells
         'LblWells
         '
         Me.LblWells.AutoSize = True
-        Me.LblWells.Location = New System.Drawing.Point(481, 599)
+        Me.LblWells.Location = New System.Drawing.Point(247, 599)
         Me.LblWells.Name = "LblWells"
-        Me.LblWells.Size = New System.Drawing.Size(47, 13)
+        Me.LblWells.Size = New System.Drawing.Size(82, 13)
         Me.LblWells.TabIndex = 12
-        Me.LblWells.Text = "LblWells"
+        Me.LblWells.Text = "Nomber of wells"
         '
         'BtnGenWells
         '
@@ -220,16 +176,10 @@ Partial Class PlotWells
         Me.Controls.Add(Me.NumDistMin)
         Me.Controls.Add(Me.NumPosToFind)
         Me.Controls.Add(Me.LblNbrOfPosToFind)
-        Me.Controls.Add(Me.LblCoteB)
-        Me.Controls.Add(Me.LblCoteA)
-        Me.Controls.Add(Me.NumCoteB)
-        Me.Controls.Add(Me.NumCoteA)
         Me.Controls.Add(Me.Chart1)
         Me.Name = "PlotWells"
         Me.Text = "Plot Point"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumCoteA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumCoteB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumPosToFind, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumDistMin, System.ComponentModel.ISupportInitialize).EndInit()
@@ -239,10 +189,6 @@ Partial Class PlotWells
 
     End Sub
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
-    Friend WithEvents NumCoteA As NumericUpDown
-    Friend WithEvents NumCoteB As NumericUpDown
-    Friend WithEvents LblCoteA As Label
-    Friend WithEvents LblCoteB As Label
     Friend WithEvents LblNbrOfPosToFind As Label
     Friend WithEvents NumPosToFind As NumericUpDown
     Friend WithEvents BindingSource1 As BindingSource

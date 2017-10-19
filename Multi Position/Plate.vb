@@ -9,7 +9,7 @@ Public Class Plate
     Private PWeigth As Double = 2
     Private PClearence As Double = 1
     Private PWellQtt As Double = 4
-    Private PWellFilled As Double = 0
+    Private PWell2Fill As Double = 0
 
     ''' <summary>
     ''' Longueur de la plaque en nombre de puits
@@ -64,11 +64,14 @@ Public Class Plate
     ''' Nombre de puit remplis
     ''' </summary>
     ''' <returns>PwellFill</returns>
-    Public ReadOnly Property _PWellFilled As Double
+    Public Property _PWell2Fill As Double
         Get
-            PWellFilled = _WellsArray.Count
-            Return PWellFilled
+            PWell2Fill = _WellsArray.Count
+            Return PWell2Fill
         End Get
+        Set(value As Double)
+            PWell2Fill = value
+        End Set
 
     End Property
 
@@ -161,7 +164,7 @@ Public Class Plate
     ''' <returns>rend un puit</returns>
     Private Function GenWell(ByVal X As Double, ByVal Y As Double) As Well
 
-        Dim Well As New Well(6000, 6000, 250, 3, X, Y)
+        Dim Well As New Well(6360, 6360, 250, 100, X, Y)
         Well._ID = "ID" & WellsArray.Count
         Well.GenPoints()
         Return Well

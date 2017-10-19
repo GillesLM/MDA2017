@@ -20,6 +20,8 @@ Public Class PlotWells
             Return Plaque._WellsArray(Iteration)
         End Get
 
+
+
     End Property
 
     Private Sub DraftPlotPoints_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -38,17 +40,7 @@ Public Class PlotWells
 
 
 
-    Private Sub NumCoteA_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteA.ValueChanged
 
-        Puit._AreaWidth = NumCoteA.Value
-
-    End Sub
-
-    Private Sub NumCoteB_ValueChanged(sender As Object, e As EventArgs) Handles NumCoteB.ValueChanged
-
-        Puit._AreaHeight = NumCoteB.Value
-
-    End Sub
 
     Private Sub NumPosToFind_ValueChanged(sender As Object, e As EventArgs) Handles NumPosToFind.ValueChanged
 
@@ -62,10 +54,6 @@ Public Class PlotWells
 
     End Sub
 
-
-
-
-
     Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
 
         Me.Chart1.Series("Series1").Points.Clear()
@@ -77,16 +65,13 @@ Public Class PlotWells
     End Sub
 
 
-
-
-
-
-
     Private Sub NumWells_ValueChanged(sender As Object, e As EventArgs) Handles NumWells.ValueChanged
         WellNbr = NumWells.Value
     End Sub
 
     Private Sub BtnGenWells_Click(sender As Object, e As EventArgs) Handles BtnGenWells.Click
+
+        Plaque.
         Plaque.GenerateWells(WellNbr)
         TimerShowPositins.Enabled = True
 
@@ -100,7 +85,7 @@ Public Class PlotWells
         Dim Form As New PlotPositions()
 
 
-        If Iteration < Plaque._PWellFilled Then
+        If Iteration < Plaque._PWell2Fill Then
             Me.Chart1.Series("Series1").Points.AddXY(Plaque._WellsArray(Iteration)._Coordonates.X, Plaque._WellsArray(Iteration)._Coordonates.Y)
             Form.Show()
         Else
