@@ -35,4 +35,15 @@
         Return Point
     End Function
 
+    ''' <summary>
+    ''' Fonction qui trie les points selon les X croissants.
+    ''' </summary>
+    Public Sub SortPoint(ByRef List As List(Of Point))
+
+        Dim sortedPoints As New List(Of Point)
+        sortedPoints = (From pnt In List Order By pnt.X, pnt.Y Select pnt).ToList
+        List = sortedPoints
+
+    End Sub
+
 End Module

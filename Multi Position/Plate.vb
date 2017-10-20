@@ -112,9 +112,8 @@ Public Class Plate
     ''' <returns>rend un puit</returns>
     Private Function Generate1Well(ByVal X As Double, ByVal Y As Double, ByVal CountOfPoint As Integer) As Well
 
-        Dim Well As New Well(6360, 6360, 250, CountOfPoint, X, Y)
-        Well._ID = "ID" & WellsList.Count
-        Well.GenPoints()
+        Dim Well As New Well(6360, 6360, 250, CountOfPoint, X, Y) With {._ID = "ID" & WellsList.Count}
+        Well.GeneratePoints()
         Return Well
 
     End Function
@@ -157,6 +156,8 @@ Public Class Plate
     Public Sub ClearPlate()
         WellsList.Clear()
     End Sub
+
+
 
 End Class
 

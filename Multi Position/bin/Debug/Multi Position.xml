@@ -112,6 +112,11 @@ Multi Position
  <param name="OrdonateScale"></param>
  <returns>A point</returns>
 </member>
+<member name="M:Multi_Position.Algèbre.SortPoint(System.Collections.Generic.List{System.Drawing.Point}@)">
+ <summary>
+ Fonction qui trie les points selon les X croissants.
+ </summary>
+</member>
 <member name="T:Multi_Position.Well">
  <summary>
  Class de zone de point. Elle a pour but la création d'aire contenant plusieurs point dont la position est déterminé de manière aléatoire.
@@ -181,14 +186,9 @@ Multi Position
  <param name="Distance">Distance minimal entre les points</param>
  <param name="Count">Nombre de point contenu dans la zone</param>
 </member>
-<member name="M:Multi_Position.Well.GenPoints">
+<member name="M:Multi_Position.Well.GeneratePoints">
  <summary>
  Génération des points dans la zone
- </summary>
-</member>
-<member name="M:Multi_Position.Well.SortPoint(System.Collections.Generic.List{System.Drawing.Point}@)">
- <summary>
- Fonction qui trie les points selon les X croissants.
  </summary>
 </member>
 <member name="M:Multi_Position.Well.op_Addition(Multi_Position.Well,Multi_Position.Well)">

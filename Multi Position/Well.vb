@@ -5,15 +5,15 @@
 ''' </summary>
 Public Class Well
 
-    Private ID As String           'Numéro d'identification du puits
+    Private ID As String                'Numéro d'identification du puits
     Private WellCoord As New Point()    'Coordonnées du puit sur une plaque
-    Private Largeur As Double       'largeur de la zone contenant les points 
-    Private Longueur As Double      'longeur de la zone contenant les points
-    Private DistanceMin As Double   'distance minimum séparant les points
-    Private CountOfPoints As Double    'Nombre de point dans la zone
+    Private Largeur As Double           'largeur de la zone contenant les points 
+    Private Longueur As Double          'longeur de la zone contenant les points
+    Private DistanceMin As Double       'distance minimum séparant les points
+    Private CountOfPoints As Double     'Nombre de point dans la zone
 
-    Private MaxIteration As UInteger = 10000 'Nombre d'iération pour trouver les points
-    Private PointsList As New List(Of Point)   'tableau de point contenant les points
+    Private MaxIteration As UInteger = 10000    'Nombre d'iération pour trouver les points
+    Private PointsList As New List(Of Point)    'tableau de point contenant les points
 
 
     ''' <summary>
@@ -155,13 +155,13 @@ Public Class Well
     ''' <summary>
     ''' Génération des points dans la zone
     ''' </summary>
-    Public Sub GenPoints()
+    Public Sub GeneratePoints()
 
         Dim Iteration As Integer = 0    'compteur d'itérations
         Dim Count As Integer = 0        'compteur de points trouvés
         Dim Flag As Boolean = False     'Indique si un point a été trouvé
         Dim Distance As Integer = 0     ' distance calculé entre 2 point
-        Dim RndPoint As New Point() 'Point aléatoire 
+        Dim RndPoint As New Point()     'Point aléatoire 
 
         'Génération du premier point que l'on ajout au tableau de point aléatoire
         RndPoint = GenOnePoint(Largeur, Longueur)
@@ -169,13 +169,13 @@ Public Class Well
 
         'Recherche d'un nombre de point aléatoire. S'arrête si il a a assés de points trouvés ou si la boucle a fait assés d'itération
         While (Count < CountOfPoints - 1) And (Iteration < MaxIteration)
-            RndPoint = GenOnePoint(Largeur, Longueur)                            'génération d'un point
-            Flag = False                                        'indicateur de point trouvé mis à false
+            RndPoint = GenOnePoint(Largeur, Longueur)                           'génération d'un point
+            Flag = False                                                        'indicateur de point trouvé mis à false
 
-            For j As Integer = 0 To PointsList.Count - 1            'Parcours du tableau de points valides
+            For j As Integer = 0 To PointsList.Count - 1                        'Parcours du tableau de points valides
 
-                Distance = Pythagore(PointsList(j), RndPoint)       'Calcul de la distance entre le point généré et le point indexé du tableau de point valide
-                If Distance < DistanceMin Then                  'Si la distance n'est pas assés grand. L'indicateur est mis à true
+                Distance = Pythagore(PointsList(j), RndPoint)                   'Calcul de la distance entre le point généré et le point indexé du tableau de point valide
+                If Distance < DistanceMin Then                                  'Si la distance n'est pas assés grand. L'indicateur est mis à true
                     Flag = True
                 End If
 
@@ -193,16 +193,6 @@ Public Class Well
 
     End Sub
 
-    ''' <summary>
-    ''' Fonction qui trie les points selon les X croissants.
-    ''' </summary>
-    Private Sub SortPoint(ByRef List As List(Of Point))
-
-        Dim sortedPoints As New List(Of Point)
-        sortedPoints = (From pnt In List Order By pnt.X, pnt.Y Select pnt).ToList
-        List = sortedPoints
-
-    End Sub
 
     ''' <summary>
     ''' Addition de 2 puits
