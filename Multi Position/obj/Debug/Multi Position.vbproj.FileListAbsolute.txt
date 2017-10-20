@@ -47,3 +47,16 @@ F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\b
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\bin\Debug\Multi Position.xml
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\obj\Debug\Multi_Position.PlotPositions.resources
 F:\1-Travail\Visual Studio 2017\Projects\Multi Position\MDA2017\Multi Position\obj\Debug\Multi_Position.PlotWells.resources
+C:\Users\Gilles\Desktop\New folder\Multi Position\bin\Debug\Multi Position.exe.config
+C:\Users\Gilles\Desktop\New folder\Multi Position\bin\Debug\Multi Position.exe
+C:\Users\Gilles\Desktop\New folder\Multi Position\bin\Debug\Multi Position.pdb
+C:\Users\Gilles\Desktop\New folder\Multi Position\bin\Debug\Multi Position.xml
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi Position.vbprojResolveAssemblyReference.cache
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi_Position.PlotPositions.resources
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi_Position.Resources.resources
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi_Position.PlotWells.resources
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi Position.vbproj.GenerateResource.Cache
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi Position.vbproj.CoreCompileInputs.cache
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi Position.exe
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi Position.xml
+C:\Users\Gilles\Desktop\New folder\Multi Position\obj\Debug\Multi Position.pdb

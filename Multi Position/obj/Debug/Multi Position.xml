@@ -51,13 +51,7 @@ Multi Position
  </summary>
  <returns>PWellQtt</returns>
 </member>
-<member name="P:Multi_Position.Plate._PWellFilled">
- <summary>
- Nombre de puit remplis
- </summary>
- <returns>PwellFill</returns>
-</member>
-<member name="P:Multi_Position.Plate._WellsArray">
+<member name="P:Multi_Position.Plate._WellsList">
  <summary>
  Collection de puits remplis dans la plaque
  </summary>
@@ -68,22 +62,33 @@ Multi Position
  Contruction d'une plaque avec les valeur par defaut. Largeur de 10, Longueur de 10, espacement de 10
  </summary>
 </member>
-<member name="M:Multi_Position.Plate.#ctor(Multi_Position.Well,System.Double,System.Double,System.Double)">
+<member name="M:Multi_Position.Plate.#ctor(System.Double,System.Double,System.Double)">
  <summary>
  Contruction d'une plaque de puits. Largeur et longeur en nombre de puits
  </summary>
- <param name="Puit">Variable contenant les caractérisques du premier puit : coin gauche côté µscope</param>
  <param name="Largeur">Largeur de la plaque en nombre de puits</param>
  <param name="Longueur">Longeur de la plaque en nombre de puits</param>
  <param name="Entrax">Entrax entre les puits en mm</param>
 </member>
-<member name="M:Multi_Position.Plate.GenWell(System.Double,System.Double)">
+<member name="M:Multi_Position.Plate.Generate1Well(System.Double,System.Double,System.Int32)">
  <summary>
  Génération d'un puit au coordonnée X Y
  </summary>
  <param name="X">coordonnée X du puit</param>
  <param name="Y">coordonnée Y du puit</param>
  <returns>rend un puit</returns>
+</member>
+<member name="M:Multi_Position.Plate.FillWells(System.Int32,System.Int32)">
+ <summary>
+ Remplis un nombre de puits demander avec un nombre de point demandé
+ </summary>
+ <param name="CountOfWell">Nombre de puits demandés</param>
+ <param name="CountOfPoints">Nombre de points dmandés</param>
+</member>
+<member name="M:Multi_Position.Plate.ClearPlate">
+ <summary>
+ Vide toutes les puits de la plaque
+ </summary>
 </member>
 <member name="P:Multi_Position.PlotWells._ActuelWell">
  <summary>
@@ -114,7 +119,7 @@ Multi Position
  
  </summary>
 </member>
-<member name="P:Multi_Position.Well._PointsArray">
+<member name="P:Multi_Position.Well._PointsList">
  <summary>
  Tableau des point peuplant la zone
  </summary>
@@ -138,7 +143,7 @@ Multi Position
  </summary>
  <returns>Retourne une valeur de type double</returns>
 </member>
-<member name="P:Multi_Position.Well._CountAsk">
+<member name="P:Multi_Position.Well._CountOfPoints">
  <summary>
  nombre de point a trouver
  </summary>
@@ -156,7 +161,7 @@ Multi Position
  </summary>
  <returns></returns>
 </member>
-<member name="P:Multi_Position.Well._Coordonates">
+<member name="P:Multi_Position.Well._WellCoord">
  <summary>
  Coordonnées XY du point sur une plaque.
  </summary>
@@ -185,6 +190,14 @@ Multi Position
  <summary>
  Fonction qui trie les points selon les X croissants.
  </summary>
+</member>
+<member name="M:Multi_Position.Well.op_Addition(Multi_Position.Well,Multi_Position.Well)">
+ <summary>
+ Addition de 2 puits
+ </summary>
+ <param name="WellA">Puit A</param>
+ <param name="WellB">Puit B</param>
+ <returns> Un puit qui contient les point A et B</returns>
 </member>
 </members>
 </doc>

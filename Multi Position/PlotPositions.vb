@@ -12,8 +12,8 @@
         ActuelWell = PlotWells._ActuelWell
 
 
-        For i As Integer = 0 To ActuelWell._PointsArray.Count - 1
-            Me.ChrPosInWell.Series("Positions").Points.AddXY(ActuelWell._PointsArray(i).X, ActuelWell._PointsArray(i).Y)
+        For i As Integer = 0 To ActuelWell._PointsList.Count - 1
+            Me.ChrPosInWell.Series("Positions").Points.AddXY(ActuelWell._PointsList(i).X, ActuelWell._PointsList(i).Y)
             LblWell_ID.Text = ActuelWell._ID
         Next
 

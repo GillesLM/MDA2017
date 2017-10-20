@@ -6,26 +6,26 @@
 Public Class Well
 
     Private ID As String           'Numéro d'identification du puits
-    Private Coordonates As New Point()    'Coordonnées du puit sur une plaque
+    Private WellCoord As New Point()    'Coordonnées du puit sur une plaque
     Private Largeur As Double       'largeur de la zone contenant les points 
     Private Longueur As Double      'longeur de la zone contenant les points
     Private DistanceMin As Double   'distance minimum séparant les points
-    Private NumberOfPoint As Double    'Nombre de point dans la zone
+    Private CountOfPoints As Double    'Nombre de point dans la zone
 
-    Private IterationMax As UInteger = 10000 'Nombre d'iération pour trouver les points
-    Private RArrey As New List(Of Point)   'tableau de point contenant les points
+    Private MaxIteration As UInteger = 10000 'Nombre d'iération pour trouver les points
+    Private PointsList As New List(Of Point)   'tableau de point contenant les points
 
 
     ''' <summary>
     ''' Tableau des point peuplant la zone
     ''' </summary>
     ''' <returns>Retourne un tableau du type arraylist</returns>
-    Public Property _PointsArray As List(Of Point)
+    Public Property _PointsList As List(Of Point)
         Get
-            Return RArrey
+            Return PointsList
         End Get
         Set(value As List(Of Point))
-            RArrey = value
+            PointsList = value
         End Set
     End Property
 
@@ -74,12 +74,12 @@ Public Class Well
     ''' nombre de point a trouver
     ''' </summary>
     ''' <returns>retourne une valeur du type double</returns>
-    Public Property _CountAsk As Double
+    Public Property _CountOfPoints As Double
         Get
-            Return NumberOfPoint
+            Return CountOfPoints
         End Get
         Set(value As Double)
-            NumberOfPoint = value
+            CountOfPoints = value
         End Set
     End Property
 
@@ -89,10 +89,10 @@ Public Class Well
     ''' <returns>le nombre maximum d'itération pour trouver les points aléatoire</returns>
     Public Property _MaxIteration As UInteger
         Get
-            Return IterationMax
+            Return MaxIteration
         End Get
         Set(value As UInteger)
-            IterationMax = value
+            MaxIteration = value
         End Set
     End Property
 
@@ -113,12 +113,12 @@ Public Class Well
     ''' Coordonnées XY du point sur une plaque.
     ''' </summary>
     ''' <returns>Donnée du type point</returns>
-    Public Property _Coordonates As Point
+    Public Property _WellCoord As Point
         Get
-            Return Coordonates
+            Return WellCoord
         End Get
         Set(value As Point)
-            Coordonates = value
+            WellCoord = value
         End Set
     End Property
 
@@ -129,8 +129,8 @@ Public Class Well
         Largeur = 10
         Longueur = 10
         DistanceMin = 1
-        NumberOfPoint = 1
-        Coordonates = New Point(1, 1)
+        CountOfPoints = 1
+        WellCoord = New Point(1, 1)
 
     End Sub
 
@@ -146,9 +146,9 @@ Public Class Well
         Largeur = CoteA
         Longueur = CoteB
         DistanceMin = Distance
-        NumberOfPoint = Count
-        Coordonates.X = X
-        Coordonates.Y = Y
+        CountOfPoints = Count
+        WellCoord.X = X
+        WellCoord.Y = Y
 
     End Sub
 
@@ -165,16 +165,16 @@ Public Class Well
 
         'Génération du premier point que l'on ajout au tableau de point aléatoire
         RndPoint = GenOnePoint(Largeur, Longueur)
-        RArrey.Add(RndPoint)
+        PointsList.Add(RndPoint)
 
         'Recherche d'un nombre de point aléatoire. S'arrête si il a a assés de points trouvés ou si la boucle a fait assés d'itération
-        While (Count < NumberOfPoint - 1) And (Iteration < IterationMax)
+        While (Count < CountOfPoints - 1) And (Iteration < MaxIteration)
             RndPoint = GenOnePoint(Largeur, Longueur)                            'génération d'un point
             Flag = False                                        'indicateur de point trouvé mis à false
 
-            For j As Integer = 0 To RArrey.Count - 1            'Parcours du tableau de points valides
+            For j As Integer = 0 To PointsList.Count - 1            'Parcours du tableau de points valides
 
-                Distance = Pythagore(RArrey(j), RndPoint)       'Calcul de la distance entre le point généré et le point indexé du tableau de point valide
+                Distance = Pythagore(PointsList(j), RndPoint)       'Calcul de la distance entre le point généré et le point indexé du tableau de point valide
                 If Distance < DistanceMin Then                  'Si la distance n'est pas assés grand. L'indicateur est mis à true
                     Flag = True
                 End If
@@ -182,14 +182,14 @@ Public Class Well
             Next
 
             If Flag = False Then                                'si l'indicateur est toujours à false, alors le point est ajouté au tableau de point valide
-                RArrey.Add(RndPoint)
+                PointsList.Add(RndPoint)
                 Count += 1                                      'Le nombre de point aléatoire trouvé est incrémenté
             End If
 
             Iteration += 1                                      'le compteur d'itération est incrémenté
         End While
 
-        SortPoint(RArrey)
+        SortPoint(PointsList)                                   'Trie les points par X croissant
 
     End Sub
 
@@ -204,12 +204,19 @@ Public Class Well
 
     End Sub
 
+    ''' <summary>
+    ''' Addition de 2 puits
+    ''' </summary>
+    ''' <param name="WellA">Puit A</param>
+    ''' <param name="WellB">Puit B</param>
+    ''' <returns> Un puit qui contient les point A et B</returns>
     Shared Operator +(ByVal WellA As Well, ByVal WellB As Well) As Well
 
         Dim Result As New Well()
         Result = WellA
-        Result.RArrey.AddRange(WellB.RArrey)
+        Result.PointsList.AddRange(WellB.PointsList)
         Return Result
+
     End Operator
 
 End Class
